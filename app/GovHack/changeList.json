@@ -283,7 +283,6 @@
     "res\\icons\\windows\\Square310x310Logo.scale-100.png",
     "plugins\\com.ionic.keyboard\\src\\blackberry10\\native\\.project",
     "plugins\\pl.makingwaves.estimotebeacons\\documentation.md",
-    "www\\img\\Snout.png",
     "plugins\\com.megster.cordova.ble\\examples\\robosmart\\www\\css\\index.css",
     "taco.json",
     "res\\icons\\windows\\Square150x150Logo.scale-240.png",
@@ -401,9 +400,29 @@
     "plugins\\pl.makingwaves.estimotebeacons\\examples\\beacon-finder\\www\\js\\screen-scan-beacons.js",
     "www\\lib\\ionic\\scss\\_radio.scss",
     "www\\templates\\mThermo.html",
-    "plugins\\android.json"
+    "plugins\\android.json",
+    "www\\img\\Icons\\WINE.png",
+    "www\\img\\Icons\\INFO.png",
+    "www\\img\\Icons\\NATURE.png",
+    "www\\img\\Icons\\Sports-nature-outdoors.png",
+    "www\\img\\Icons\\FUN.png",
+    "www\\img\\Icons\\Entertainment.png",
+    "www\\img\\Icons\\information.png",
+    "www\\img\\Icons\\history-art-culture.png",
+    "www\\img\\Icons\\ACCOM.png",
+    "www\\img\\Icons\\FoodFarm.png",
+    "www\\img\\Icons\\CULTURE.png",
+    "www\\templates\\mTruffle.html",
+    "www\\img\\Icons\\Accomm.png",
+    "www\\img\\Icons\\FOOD.png",
+    "www\\img\\Icons\\beer-wine.png"
   ],
-  "deletedFilesIos": [],
+  "deletedFilesIos": [
+    "www\\img\\Snout.png",
+    "www\\js\\controllers\\abstract.js.LOCAL.js",
+    "www\\js\\controllers\\abstract.js.REMOTE.js",
+    "www\\js\\controllers\\abstract.js.BASE.js"
+  ],
   "addedPluginsIos": [
     "org.apache.cordova.device@0.3.0",
     "org.apache.cordova.geolocation@0.3.12",
@@ -415,10 +434,33 @@
   "deletedPluginsIos": [],
   "changedFiles": [
     "plugins\\android.json",
-    "www\\lib\\thermometer\\js\\jquery.thermometer.js",
-    "www\\js\\controllers\\abstract.js"
+    "www\\js\\controllers\\abstract.js",
+    "www\\img\\Icons\\snout.png",
+    "www\\js\\controllers\\map.js",
+    "www\\js\\services\\api.js",
+    "www\\index.html",
+    "www\\img\\Icons\\WINE.png",
+    "www\\img\\Icons\\INFO.png",
+    "www\\img\\Icons\\NATURE.png",
+    "www\\img\\Icons\\Sports-nature-outdoors.png",
+    "www\\img\\Icons\\FUN.png",
+    "www\\img\\Icons\\Entertainment.png",
+    "www\\img\\Icons\\information.png",
+    "www\\img\\Icons\\history-art-culture.png",
+    "www\\img\\Icons\\ACCOM.png",
+    "www\\img\\Icons\\FoodFarm.png",
+    "www\\img\\Icons\\CULTURE.png",
+    "www\\templates\\mTruffle.html",
+    "www\\img\\Icons\\Accomm.png",
+    "www\\img\\Icons\\FOOD.png",
+    "www\\img\\Icons\\beer-wine.png"
   ],
-  "deletedFiles": [],
+  "deletedFiles": [
+    "www\\img\\Snout.png",
+    "www\\js\\controllers\\abstract.js.LOCAL.js",
+    "www\\js\\controllers\\abstract.js.REMOTE.js",
+    "www\\js\\controllers\\abstract.js.BASE.js"
+  ],
   "addedPlugins": [],
   "deletedPlugins": []
 }

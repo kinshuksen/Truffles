@@ -1,7 +1,7 @@
 angular.module('app.controllers.abstract', [])
 
     //APP CONTROLLER
-        .controller('AppCtrl', function ($scope, $rootScope, $ionicModal, $timeout, $auth, $ionicLoading, $ionicPlatform, $intro) {
+        .controller('AppCtrl', function ($scope, $rootScope, $ionicModal, $timeout, $auth, $ionicLoading, $ionicPlatform, $intro, $api) {
             $scope.distance = 0;
             // Form data for the login modal
             $scope.loginData = {};
@@ -31,11 +31,19 @@ angular.module('app.controllers.abstract', [])
                 $scope.mIntro = modal;
             });
 
+            // Create the intro modal that we will use later
+            $ionicModal.fromTemplateUrl('templates/mTruffle.html', {
+                scope: $scope
+            }).then(function (modal) {
+                $scope.mTruffle = modal;
+            });
+
             // Triggered in the login modal to close it
             $scope.close = function () {
                 $scope.mLogin.hide();
                 $scope.mThermo.hide();
                 $scope.mIntro.hide();
+                $scope.mTruffle.hide();
             };
 
             // Open the login modal
@@ -52,6 +60,12 @@ angular.module('app.controllers.abstract', [])
             // Open the intro modal
             $scope.intro = function () {
                 $scope.mIntro.show();
+            };
+
+            // Open the login modal
+            $scope.showTruffle = function (loc) {
+                $scope.truffleContext = loc;
+                $scope.mTruffle.show();
             };
 
             // Perform the login action when the user submits the login form
@@ -129,6 +143,9 @@ angular.module('app.controllers.abstract', [])
                 $scope.intro.show();
             });
 
+            $scope.collect = function (context) {
+                $api.getCheckin(context);
+            }
 
             function RGB2HTML(red, green, blue) {
                 var decColor = 0x1000000 + blue + 0x100 * green + 0x10000 * red;
