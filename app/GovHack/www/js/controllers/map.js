@@ -184,7 +184,8 @@ angular.module('app.controllers.map', [])
 
                         google.maps.event.addListener(marker, 'click', (function (marker, i) {
                             return function () {
-                                $scope.showTruffle(locations[i]);
+                                centerOnMe();
+                                $scope.showTruffle(locations[i], myloc);
                                 //infowindow.setContent(locations[i].description);
                                 //infowindow.open(map, marker);
                             };

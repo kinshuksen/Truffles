@@ -5,8 +5,9 @@
         </div>
     </ion-header-bar>
     <ion-content class="menu-header">
-       
+        <button class="button button-royal" ng-class="inPOIRange() ? '' : 'disabled'" ng-click="collect(truffleContext)">Grab Truffle</button>
         {{truffleContext}}
-        <button class="button" ng-click="collect(truffleContext)">collect that trufl</button>
+        {{dist}}
+        
     </ion-content>
 </div>

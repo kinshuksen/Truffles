@@ -434,33 +434,10 @@
   "deletedPluginsIos": [],
   "changedFiles": [
     "plugins\\android.json",
-    "www\\js\\controllers\\abstract.js",
-    "www\\img\\Icons\\snout.png",
-    "www\\js\\controllers\\map.js",
-    "www\\js\\services\\api.js",
-    "www\\index.html",
-    "www\\img\\Icons\\WINE.png",
-    "www\\img\\Icons\\INFO.png",
-    "www\\img\\Icons\\NATURE.png",
-    "www\\img\\Icons\\Sports-nature-outdoors.png",
-    "www\\img\\Icons\\FUN.png",
-    "www\\img\\Icons\\Entertainment.png",
-    "www\\img\\Icons\\information.png",
-    "www\\img\\Icons\\history-art-culture.png",
-    "www\\img\\Icons\\ACCOM.png",
-    "www\\img\\Icons\\FoodFarm.png",
-    "www\\img\\Icons\\CULTURE.png",
     "www\\templates\\mTruffle.html",
-    "www\\img\\Icons\\Accomm.png",
-    "www\\img\\Icons\\FOOD.png",
-    "www\\img\\Icons\\beer-wine.png"
+    "www\\js\\controllers\\abstract.js"
   ],
-  "deletedFiles": [
-    "www\\img\\Snout.png",
-    "www\\js\\controllers\\abstract.js.LOCAL.js",
-    "www\\js\\controllers\\abstract.js.REMOTE.js",
-    "www\\js\\controllers\\abstract.js.BASE.js"
-  ],
+  "deletedFiles": [],
   "addedPlugins": [],
   "deletedPlugins": []
 }
