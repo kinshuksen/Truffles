@@ -58,7 +58,7 @@ public class POIController {
     			+ "outdoor smoking area, friendly staff, travel desk, tour sales, helpful local advice, modern kitchen, "
     			+ "coin operated laundry, licenced Bar open to 3am, Internet access, email, website chat, printing and faxing,"
     			+ " international public telephones, convenience store/delicatessen, pool table, quiet/relaxed atmosphere. "
-    			+ "Group or student bookings welcome. Open 24 hours a day.", "-34.923622000","138.600199000", SourceAPIs.atdw, "5");
+    			+ "Group or student bookings welcome. Open 24 hours a day.", "-34.923622000","138.600199000", SourceAPIs.ATDW, "5");
     	
     	POI culturePoint = new POI("9001506$d7358032-771d-4c6e-8548-a6620c5c59d1", poiTypes.CULTURE, 
     			"Art Gallery Of South Australia",
@@ -71,7 +71,7 @@ public class POIController {
     			+ "art from the 15th to 20th century, particularly the development of landscape and portrait painting.The highlight "
     			+ "of the gallery's Asian collection is its holdings of South East Asian ceramics that is the finest museum collection"
     			+ " of such material in the world. Free lunchtime talks at 12.45pm are available on most Tuesdays."
-    			,  "-34.920950587","138.603987693", SourceAPIs.atdw, "2");
+    			,  "-34.920950587","138.603987693", SourceAPIs.ATDW, "2");
 
     	
     	POI naturePoint = new POI("9194722$d3678c0c-b464-475c-9564-5922bf403343", poiTypes.NATURE, 
@@ -88,7 +88,7 @@ public class POIController {
     			+ " minutes to complete this trail."
     			+ "Alternatively, you can book a guided tour of West Terrace Cemetery and let our knowledgeable guides bring to life the"
     			+ " captivating and long forgotten stories of some of the State's and Nation's most notable figures and early pioneers."   			
-    			,  "-34.933687697","138.587830066", SourceAPIs.atdw, "3");
+    			,  "-34.933687697","138.587830066", SourceAPIs.ATDW, "3");
     	
     	POI winePoint = new POI("9151841$298b5cf6-884c-4662-a7f1-3cd5e34df1b9", poiTypes.WINE, 
     			"Aramis Vineyards",
@@ -96,7 +96,7 @@ public class POIController {
     			+ " leaving the city."
     			+ "Lose yourself in the hedonistic pleasures of some of South Australia's most iconic wines in the exclusive Adelaide "
     			+ "Boutique and discover why Aramis Vineyards truly are the modern classics of the McLaren Vale region."   			
-    			,  "-34.931976000","138.573208000", SourceAPIs.atdw, "4");
+    			,  "-34.931976000","138.573208000", SourceAPIs.ATDW, "4");
     	
     	POI funPoint = new POI("9214242$0d12d3c1-6013-4608-8829-a86a8c5c9ebd", poiTypes.FUN, 
     			"Flight Experience Adelaide",
@@ -109,7 +109,7 @@ public class POIController {
     			+ "Want a unique gift for a special occasion? A Flight Experience is the perfect gift for someone special - it's sure to "
     			+ "please and will never be forgotten!"
     			+ "Have a look on our website for all flight package prices, or telephone us and speak with our friendly staff!"   			
-    			,  "-34.908787900","138.596282200", SourceAPIs.atdw, "10");
+    			,  "-34.908787900","138.596282200", SourceAPIs.ATDW, "10");
     	
     	
     	POI foodPoint = new POI("9225921$463f4aed-30c8-4724-bf16-9dde48a20ceb", poiTypes.FOOD, 
@@ -119,7 +119,7 @@ public class POIController {
     			+ "well-styled, and she doesn't come cheap. Treat yourself to (very) petite share plates of hot pepper crayfish roll, crispy"
     			+ " pork belly in lettuce cups, and soft shell crab bao – it's steam bun blackened with squid ink."
     			+ "Madame Hanoi only takes bookings for 8 or more."  			
-    			,  "-34.921430000","138.601166000", SourceAPIs.atdw, "3");
+    			,  "-34.921430000","138.601166000", SourceAPIs.ATDW, "3");
     	
        	POI infoPoint = new POI("9208579$f0859c0a-22a8-4e92-9005-ae873b5ccca0", poiTypes.INFO, 
     			"Adelaide Visitor Information Centre",
@@ -130,7 +130,7 @@ public class POIController {
     			+ "Free wheelchair and pusher hire is available.First Steps in Adelaide, a free orientation walk of the City, departs from the "
     			+ "Adelaide Visitor Information Centre at 9.30am Monday to Friday (excluding Public Holidays).The centre is open Monday to Friday"
     			+ " 9am to 5pm, Saturday and Sunday 10am to 4pm and Public Holidays 11am to 3pm."  			
-    			,  "-34.923518417","138.600609834", SourceAPIs.atdw, "5");
+    			,  "-34.923518417","138.600609834", SourceAPIs.ATDW, "5");
        	    	 
        	pois.add(accomPoint);
        	pois.add(naturePoint);
