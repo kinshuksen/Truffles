@@ -29,20 +29,10 @@ public class TruffleDao {
 			pstmt = dataSource.getConnection().prepareStatement(query);
 			int i=1;
 			pstmt.setString(i++, poiId);
+			pstmt.setString(i++, name);
 			pstmt.setString(i++, latitude);
 			pstmt.setString(i++, longitude);
-						
-//			java.util.Date date = Calendar.getInstance().getTime();
-//			java.sql.Date sqlDate = new java.sql.Date(date.getTime()); 	
-						
-			DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss.SSS");
-			Date date = dateFormat.parse(new Date().toString());
-			long time = date.getTime();
-			Timestamp timestamp = new Timestamp(time);		
-			
-			pstmt.setTimestamp(i++, timestamp);
-			
-			pstmt.setString(i++, name);
+			pstmt.setTimestamp(i++, new Timestamp(System.currentTimeMillis()));
 			pstmt.setInt(i++, userId);
 			pstmt.setString(i++, poiType);			
 			pstmt.executeUpdate();

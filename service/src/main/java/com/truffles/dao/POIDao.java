@@ -40,6 +40,7 @@ public class POIDao {
 	private String url;
 	private String atdw;
 	private String monuments;
+	private String acc;
 
 	public String getUrl() {
 		return url;
@@ -63,6 +64,14 @@ public class POIDao {
 
 	public void setMonuments(String monuments) {
 		this.monuments = monuments;
+	}
+
+	public String getAcc() {
+		return acc;
+	}
+
+	public void setAcc(String acc) {
+		this.acc = acc;
 	}
 
 	public List<POI> getPOIs(String latitude, String longitude) {
