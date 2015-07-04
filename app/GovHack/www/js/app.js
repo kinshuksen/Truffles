@@ -6,7 +6,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('app', ['ionic',
     'app.controllers.abstract',
-    'app.controllers.hotcold',
+    //'app.controllers.hotcold',
     'app.controllers.map',
     'app.controllers.auth',
     'app.services.auth',

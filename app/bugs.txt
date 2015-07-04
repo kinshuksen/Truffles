@@ -1,0 +1,1 @@
+[] exiting the thermo modal with hardware back button causes persistant beacon scanning

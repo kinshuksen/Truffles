@@ -138,6 +138,8 @@ angular.module('app.controllers.map', [])
                     return;
                 }
 
+                clearMarkers();
+
                 $scope.loading = $ionicLoading.show({
                     content: 'Getting some trufls...',
                     showBackdrop: true
@@ -147,68 +149,51 @@ angular.module('app.controllers.map', [])
                 $api.getMarkers(myloc).then(function (result) {
                     console.log(result);
                     locations = result;
+                    applyMarkers();
                     $scope.loading.hide();
                 });
 
-                var iconURLPrefix = 'img/Icons/';
-                var icons = [
-                    iconURLPrefix + 'FOOD.png',
-                    iconURLPrefix + 'NATURE.png',
-                    iconURLPrefix + 'CULTURE.png',
-                    iconURLPrefix + 'WINE.png',
-                    iconURLPrefix + 'FUN.png',
-                    iconURLPrefix + 'ACCOM.png',
-                    iconURLPrefix + 'INFO.png'
-                ];
-                var icons_length = icons.length;
+                var applyMarkers = function() {
+                    var iconURLPrefix = 'img/Icons/';
 
-                var marker;
-                var markers = new Array();
-                var iconCounter = 0;
+                    var marker;
+                    var markers = new Array();
+                    var iconCounter = 0;
 
-                function toggleBounce(marker) {
-                    if (marker.getAnimation() != null) {
-                        marker.setAnimation(null);
-                    } else {
-                        marker.setAnimation(google.maps.Animation.BOUNCE);
-                    }
-                }
 
-                // Add the markers and infowindows to the map
-                for (var i = 0; i < locations.length; i++) {
-                    //TODO need to append cat img url
-                    var pinIcon = {
-                        //url: locations[i][3],
-                        size: null,
-                        origin: null,
-                        anchor: null,
-                        scaledSize: new google.maps.Size(60, 60, "%", "%")
-                    };
-
-                    marker = new google.maps.Marker({
-                        //position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                        position: new google.maps.LatLng(locations[i].latLong),
-                        animation: google.maps.Animation.DROP,
-                        map: map,
-                        //icon: pinIcon
-                    });
-
-                    markers.push(marker);
-
-                    google.maps.event.addListener(marker, 'click', (function (marker, i) {
-                        return function () {
-                            toggleBounce(marker);
-                            infowindow.setContent(locations[i].description);
-                            infowindow.open(map, marker);
+                    // Add the markers and infowindows to the map
+                    for (var i = 0; i < locations.length; i++) {
+                        //TODO need to append cat img url
+                        var pinIcon = {
+                            url: iconURLPrefix + locations[i].poiType + ".png",
+                            size: null,
+                            origin: null,
+                            anchor: null,
+                            scaledSize: new google.maps.Size(43, 55, "%", "%")
                         };
-                    })(marker, i));
 
-                    iconCounter++;
-                    // We only have a limited number of possible icon colors, so we may have to restart the counter
-                    if (iconCounter >= icons_length) {
-                        iconCounter = 0;
+                        marker = new google.maps.Marker({
+                            //position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                            position: new google.maps.LatLng(locations[i].latitude, locations[i].longitude),
+                            animation: google.maps.Animation.DROP,
+                            map: map,
+                            icon: pinIcon
+                        });
+
+                        markers.push(marker);
+
+                        google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                            return function () {
+                                centerOnMe();
+                                $scope.showTruffle(locations[i], myloc);
+                                //infowindow.setContent(locations[i].description);
+                                //infowindow.open(map, marker);
+                            };
+                        })(marker, i));
+
                     }
                 }
+               
 
             }
 
@@ -217,6 +202,8 @@ angular.module('app.controllers.map', [])
             $scope.getMarkers = function () {
                 getMarkers();
             }
+
+
         });
 
 

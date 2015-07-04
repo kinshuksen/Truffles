@@ -1,0 +1,13 @@
+<div class="modal">
+    <ion-header-bar>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="close()">Close</button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="menu-header">
+        <button class="button button-royal" ng-class="inPOIRange() ? '' : 'disabled'" ng-click="collect(truffleContext)">Grab Truffle</button>
+        {{truffleContext}}
+        {{dist}}
+        
+    </ion-content>
+</div>
