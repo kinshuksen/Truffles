@@ -152,8 +152,13 @@ angular.module('app.controllers.map', [])
 
                 var iconURLPrefix = 'img/Icons/';
                 var icons = [
-                    iconURLPrefix + 'African Wild Dog.png',
-                    iconURLPrefix + 'Baboon.png'
+                    iconURLPrefix + 'FOOD.png',
+                    iconURLPrefix + 'NATURE.png',
+                    iconURLPrefix + 'CULTURE.png',
+                    iconURLPrefix + 'WINE.png',
+                    iconURLPrefix + 'FUN.png',
+                    iconURLPrefix + 'ACCOM.png',
+                    iconURLPrefix + 'INFO.png'
                 ];
                 var icons_length = icons.length;
 
