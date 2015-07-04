@@ -1,7 +1,7 @@
 angular.module('app.controllers.abstract', [])
 
     //APP CONTROLLER
-        .controller('AppCtrl', function ($scope, $rootScope, $ionicModal, $timeout, $auth, $ionicLoading) {
+        .controller('AppCtrl', function ($scope, $rootScope, $ionicModal, $timeout, $auth, $ionicLoading, $ionicPlatform, $intro) {
             $scope.distance = 0;
             // Form data for the login modal
             $scope.loginData = {};
@@ -46,6 +46,7 @@ angular.module('app.controllers.abstract', [])
             // Open the thermo modal
             $scope.thermo = function () {
                 $scope.mThermo.show();
+                initialize(); //initialize the thermometer when modal is called
             };
 
             // Open the intro modal
@@ -67,6 +68,11 @@ angular.module('app.controllers.abstract', [])
                 console.log($scope.distance);
             }
 
+            $scope.inRange = function () {
+
+                return ($scope.distance > 98);
+            }
+
             $scope.onError = function (errorMessage) {
                 console.log('Range error: ' + errorMessage);
             }
@@ -75,8 +81,8 @@ angular.module('app.controllers.abstract', [])
                 if (angular.isDefined(estimote)) {
                     estimote.beacons.stopRangingBeaconsInRegion(
                     {},
-                    onRanges,
-                    onError);
+                    $scope.onRange,
+                    $scope.onError);
                 }
             }
 
@@ -123,6 +129,49 @@ angular.module('app.controllers.abstract', [])
                 $scope.intro.show();
             });
 
+
+            function RGB2HTML(red, green, blue) {
+                var decColor = 0x1000000 + blue + 0x100 * green + 0x10000 * red;
+                return '#' + decColor.toString(16).substr(1);
+            }
+
+            function initialize() {
+
+                $scope.startScan();
+
+                $('#thermo').thermometer({
+                    height: 400,
+                    textColour: '#fff',
+                    tickColour: '#fff',
+                    liquidColour: function (value) {
+                        var red = ~~(value / 100 * 255);
+                        var grn = ~~((100 - value) / 100 * 255);
+                        return RGB2HTML(red, grn, 0);
+                    },
+                    onLoad: function () {
+                        updateThermometer();
+                    }
+                });
+            };
+            
+            function updateThermometer() {
+                $('#thermo').thermometer('setValue', $scope.distance);
+                //window.setTimeout(updateThermometer(), 2500);
+            };
+
+            $scope.update = function () {
+                updateThermometer();
+            }
+
+            $scope.initThermo = function () {
+                initialize();
+            };
+
+            // !! commented for now because it makes the soft system buttons persist. !!
+            // when the hardware back button is pressed, stop the thermometer from scanning (pretty hacky to do it on every back press but its chill cause "if (angular.isDefined(estimote)) { DO THE STOP THING }"
+            //$ionicPlatform.onHardwareBackButton(function() {
+            //    $scope.stopScan(); 
+            //});
         });
 
 

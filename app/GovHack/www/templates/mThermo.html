@@ -1,0 +1,16 @@
+<div class="modal pale-teal">
+    <ion-header-bar>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="close();stopScan()">Close</button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="menu-header">
+        <div id="thermo-container">
+            <!--<h3>{{inRange()}}</h3>-->
+            <button id="truffleButton" class="button button-royal" ng-class="inRange() ? '' : 'disabled'">Grab Truffle</button>
+            <div id="thermo"></div>
+        </div>
+        <!--<h3>{{distance}}</h3>--> 
+        <!--<button ng-click="stopScan()">STOP SCAN</button>-->
+    </ion-content>
+</div>
