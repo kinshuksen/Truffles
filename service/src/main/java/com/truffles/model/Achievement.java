@@ -10,7 +10,7 @@ public class Achievement implements Serializable {
 	private static final long serialVersionUID = -5774678679855073162L;
 	
 	private int progress;
-	private String poi_type_id;
+	private String poi_type;
 	private int target;
 	
 	public int getProgress() {
@@ -19,11 +19,11 @@ public class Achievement implements Serializable {
 	public void setProgress(int progress) {
 		this.progress = progress;
 	}
-	public String getPoi_type_id() {
-		return poi_type_id;
+	public String getPoi_type() {
+		return poi_type;
 	}
-	public void setPoi_type_id(String poi_type_id) {
-		this.poi_type_id = poi_type_id;
+	public void setPoi_type(String poi_type) {
+		this.poi_type = poi_type;
 	}
 	public int getTarget() {
 		return target;

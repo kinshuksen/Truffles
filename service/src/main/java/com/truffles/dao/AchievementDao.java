@@ -21,11 +21,11 @@ public class AchievementDao {
 	
 	public List<Achievement> getProgress(int userId) throws SQLException {
 		String query = "SELECT count(*) AS progress,"
-				+ "truffle.poi_type_id,"
+				+ "truffle.poi_type,"
 				+ " challenge.[target]"
 				+ "FROM truffle, challenge "
 				+ "where user_id = ? "
-				+ "GROUP BY truffle.poi_type_id, challenge.[target]";
+				+ "GROUP BY truffle.poi_type, challenge.[target]";
 		PreparedStatement pstmt = null;
 		PreparedStatement pstmt1 = null;
 		ResultSet rs = null;
@@ -37,7 +37,7 @@ public class AchievementDao {
 			while(rs.next()){
 				Achievement ac = new Achievement();
 				ac.setProgress(rs.getInt("progress"));
-				ac.setPoi_type_id(rs.getString("poi_type_id"));
+				ac.setPoi_type(rs.getString("poi_type"));
 				ac.setTarget(rs.getInt("target"));
 				ach.add(ac);
 			}
