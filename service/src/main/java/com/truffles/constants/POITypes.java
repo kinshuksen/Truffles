@@ -20,5 +20,6 @@ public class POITypes implements Serializable{
 	
 	public static final String INFO = "INFO";
 	
+	public static final String GOLDEN = "GOLDEN";
 }
 

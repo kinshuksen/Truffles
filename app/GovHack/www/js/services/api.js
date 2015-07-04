@@ -93,26 +93,41 @@ angular.module('app.services.api', [])
     getStatusList: function() {
         return GetLocalData("data/categories.json");
     },
-
-
-    //Get web service response data example
+   
     getMarkers: function(myloc) {
-        return GetData(baseUrl + "/poi/getpoitest?", { userID: $localStorage.get("userID"), latitude: myloc.position.A, longitude : myloc.position.F, dist: 10}, false);
+        return GetData(baseUrl + "/poi/getpois?", { userID: $localStorage.get("userID"), latitude: myloc.position.A, longitude : myloc.position.F, dist: 10}, false);
+    },
+
+    getAchievements: function () {
+        return GetData(baseUrl + "/poi/getachievements?", { userID: $localStorage.get("userID") }, false);
+    },
+
+   
+    getCheckin: function (context) {
+        var payLoad = [];
+        return GetData(baseUrl + "/truffle/bag_truffle?", { poiId: context.poiId, latitude: context.latitude, logitude: context.longitude, name: context.name, userId: $localStorage.get("userId"), poiTypeId: context.poiType}, false);
+    },
+
+      //Get web service response data example
+    getChallenges: function () {
+        return GetData(baseUrl + "/user/challenges?", true);
     },
 
     //Post example passing in a JSON obj
     postRegister: function(context) {
         console.log(context);
-        var deviceUID = "[{deviceUID: " + $localStorage.get("deviceUID") + "}]";
-        return PostData(baseUrl + "/Register", context);
+        var payload = [{email: context.email, token: null, password: context.password, deviceUID: $localStorage.get("deviceUID") }];
+        return PostData(baseUrl + "user/register", payload);
     },
 
       //Post example passing in a JSON obj
     GetRegister: function (context) {
         console.log(context);
         var deviceUID = "[{deviceUID: " + $localStorage.get("deviceUID") + "}]";
-        return GetData(baseUrl + "/Register", context);
+        return GetData(baseUrl + "user/login", context);
     },
+
+
 
     //Get Example
     serviceCheck: function() {
