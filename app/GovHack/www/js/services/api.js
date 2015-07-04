@@ -3,28 +3,14 @@ angular.module('app.services.api', [])
 
 .service('$api', function($q, $rootScope, $localStorage, $http, $cordovaDevice, $ionicPlatform, $state, $filter) {
 
-    //SOME BUILD VARIABLES
-    //these variables are to be set for each build, every client has a different url and skin
-    var client = "ACT"
-    //Staging
-
     var baseUrl = "http://43.229.60.110/truffles";
-    //Prod
-    //var apiUrl = "https://etendersazure.azurewebsites.net/api/" + client;
-
-    //External Base Url
-    var externalBaseUrl = 'https://satenders.solutions.intecgroup.com.au/ets';
-    var detailsUrl = externalBaseUrl+'/tender/display/tender-details.do?action=display-tender-details&';
-    //Prod details link
-    //var detailsLink = 'https://www.tenders.sa.gov.au/tenders/tender/display/tender-details.do?action=display-tender-details&';
-
+ 
     var isInitialised = $localStorage.get('isInitialised');
     var playedIntro = $localStorage.get('playedIntro');
 
     //check for first a time run and put things in local storage if its a first time run
     if (isInitialised) {
         console.log("Everything is stored... Continue");
-        $localStorage.set("clientCode", client);
     }else
     {
         console.log("first time run");
@@ -38,10 +24,7 @@ angular.module('app.services.api', [])
         $localStorage.set("regID", 0);
         //set the base url for service calls
         $localStorage.set('baseUrl', baseUrl);
-        $localStorage.set('detailsUrl', detailsUrl);
         $localStorage.set("isInitialised", true);
-        $localStorage.set("refreshTenders", false);
-
     }
 
 

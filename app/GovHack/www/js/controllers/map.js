@@ -46,31 +46,6 @@ angular.module('app.controllers.map', [])
                 });
                 
 
-
-                //set some boundaries
-
-                // bounds of the desired area
-                //var lastValidCenter = map.getCenter();
-
-              
-                //google.maps.event.addListener(map, 'center_changed', function () {
-                //    //                    if (allowedBounds.contains(map.getCenter())) {
-                //    //                        // still within valid bounds, so save the last valid position
-                //    lastValidCenter = map.getCenter();
-                //    //                        return;
-                //    //                    }
-
-                //    // not valid anymore => return to last valid position
-                //    map.panTo(lastValidCenter);
-
-                //});
-
-                // Limit the zoom level
-                //google.maps.event.addListener(map, 'zoom_changed', function () {
-                //    if (map.getZoom() < 18)
-                //        map.setZoom(18);
-                //});
-
                 // Stop the side bar from dragging when mousedown/tapdown on the map
                 google.maps.event.addDomListener(document.getElementById('map'), 'mousedown', function (e) {
                     e.preventDefault();
@@ -177,8 +152,13 @@ angular.module('app.controllers.map', [])
 
                 var iconURLPrefix = 'img/Icons/';
                 var icons = [
-                    iconURLPrefix + 'African Wild Dog.png',
-                    iconURLPrefix + 'Baboon.png'
+                    iconURLPrefix + 'FOOD.png',
+                    iconURLPrefix + 'NATURE.png',
+                    iconURLPrefix + 'CULTURE.png',
+                    iconURLPrefix + 'WINE.png',
+                    iconURLPrefix + 'FUN.png',
+                    iconURLPrefix + 'ACCOM.png',
+                    iconURLPrefix + 'INFO.png'
                 ];
                 var icons_length = icons.length;
 
