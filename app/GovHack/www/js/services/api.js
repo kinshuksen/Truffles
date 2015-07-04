@@ -105,7 +105,7 @@ angular.module('app.services.api', [])
    
     getCheckin: function (context) {
         var payLoad = [];
-        return GetData(baseUrl + "/truffle/bag_truffle?", { poiId: context.poiId, latitude: context.latitude, logitude: context.longitude, name: context.name, userId: $localStorage.get("userId"), poiTypeId: context.poiType}, false);
+        return GetData(baseUrl + "/truffle/bag_truffle?", { poiId: context.poiId, latitude: context.latitude, longitude: context.longitude, name: context.name, userId: $localStorage.get("userId"), poiTypeId: context.poiType}, false);
     },
 
       //Get web service response data example

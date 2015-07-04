@@ -431,7 +431,7 @@
   "deletedPluginsIos": [],
   "changedFiles": [
     "plugins\\android.json",
-    "www\\templates\\mTruffle.html"
+    "www\\js\\services\\api.js"
   ],
   "deletedFiles": [],
   "addedPlugins": [],
