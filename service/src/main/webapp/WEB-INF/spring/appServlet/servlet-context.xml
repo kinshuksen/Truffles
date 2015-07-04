@@ -55,6 +55,7 @@
     	<beans:property name="url" value="${web.url}"/>
     	<beans:property name="atdw" value="${atdw.key}"/> 
     	<beans:property name="monuments" value="${monuments.key}"/> 
+    	<beans:property name="acc" value="${acc.url}"/>
     </beans:bean>
     
    <beans:bean id="userDao" class="com.truffles.dao.UserDao"/>
