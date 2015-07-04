@@ -16,18 +16,26 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.util.StringUtils;
 import org.springframework.web.client.RestTemplate;
 
 import com.truffles.constants.ATDWTypes;
 import com.truffles.constants.POITypes;
 import com.truffles.constants.SourceAPIs;
-import com.truffles.controller.TruffleController;
+import com.truffles.model.Beacon;
 import com.truffles.model.POI;
 
 public class POIDao {
 
 	private static final Logger logger = LoggerFactory.getLogger(POIDao.class);
+	
+	
+	@Autowired
+	@Qualifier("beaconDao")
+	private BeaconDao beaconDao;
+	
 	
 	private String url;
 	private String atdw;
@@ -66,7 +74,7 @@ public class POIDao {
 			poiList = getATDWPOIs(latitude, longitude);
 
 			poiList.addAll(getMonumentPOIs(latitude, longitude));
-
+			
 			// sort this list by distance
 			if (poiList.size() > 0) {
 				Collections.sort(poiList, new Comparator<POI>() {
@@ -76,16 +84,20 @@ public class POIDao {
 						return object1.getDistance().compareTo(object2.getDistance());
 					}
 				});
-			}
-						
+			}		
+			
+			poiList = poiList.subList(0, 10);
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		System.out.println("size of POI list - " + poiList.size());
-
-		return poiList.subList(0, 9);
+		poiList.addAll(getNearbyBeacons(latitude, longitude));
+		
+		System.out.println("LENGTH - " + poiList.size());
+		
+		return poiList;
 
 	}
 
@@ -355,4 +367,34 @@ public class POIDao {
 		return type;
 
 	}
+	
+	public List<POI> getNearbyBeacons(String latitude, String longitude) {
+		
+		List<POI> beaconAsPOIs = new ArrayList<POI>();
+		
+		try {			
+			
+			List<Beacon> allBeacons = beaconDao.getBeacons();
+			
+			for(Beacon b : allBeacons){
+									
+				//should check for distance
+				if(true){			
+					POI poi = new POI(b.getUUID(), POITypes.GOLDEN, b.getName(),
+							b.getContent(), new String(b.getLatitude()), new String(b.getLongitude()), "", "distance");
+					
+					beaconAsPOIs.add(poi);
+					
+				}
+				
+			}
+			
+		} catch (Exception e){
+			e.printStackTrace();
+		}
+		
+		return beaconAsPOIs;		
+		
+	}
+	
 }

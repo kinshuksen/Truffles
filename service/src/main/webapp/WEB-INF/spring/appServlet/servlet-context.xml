@@ -59,6 +59,8 @@
     
    <beans:bean id="userDao" class="com.truffles.dao.UserDao"/>
    
+   <beans:bean id="beaconDao" class="com.truffles.dao.BeaconDao"/>
+   
    <beans:bean id="truffleDao" class="com.truffles.dao.TruffleDao"/>
    
    <beans:bean id="achievementDao" class="com.truffles.dao.AchievementDao"/>

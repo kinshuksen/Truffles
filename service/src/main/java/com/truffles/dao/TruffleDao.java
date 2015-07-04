@@ -3,6 +3,10 @@ package com.truffles.dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.sql.DataSource;
 
@@ -15,9 +19,9 @@ public class TruffleDao {
     @Qualifier("dbDataSource")
     private DataSource dataSource;
 	
-	public Integer checkIn(String poiId, String latitude, String longitude, String name, int beaconId, int userId, int poiTypeId) throws SQLException {
+	public Integer bagTruffle(String poiId, String latitude, String longitude, String name, int userId, String poiType) throws Exception {
 		Integer newId = null;
-		String query = "INSERT INTO [truffle] values (?,?,?,?,?,?,?,?) ";
+		String query = "INSERT INTO [truffle] values (?,?,?,?,?,?,?) ";
 		PreparedStatement pstmt = null;
 		PreparedStatement pstmt1 = null;
 		ResultSet rs = null;
@@ -27,10 +31,20 @@ public class TruffleDao {
 			pstmt.setString(i++, poiId);
 			pstmt.setString(i++, latitude);
 			pstmt.setString(i++, longitude);
+						
+//			java.util.Date date = Calendar.getInstance().getTime();
+//			java.sql.Date sqlDate = new java.sql.Date(date.getTime()); 	
+						
+			DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss.SSS");
+			Date date = dateFormat.parse(new Date().toString());
+			long time = date.getTime();
+			Timestamp timestamp = new Timestamp(time);		
+			
+			pstmt.setTimestamp(i++, timestamp);
+			
 			pstmt.setString(i++, name);
-			pstmt.setInt(i++, beaconId);
 			pstmt.setInt(i++, userId);
-			pstmt.setInt(i++, poiTypeId);
+			pstmt.setString(i++, poiType);			
 			pstmt.executeUpdate();
 			
 			String returnQuery = "SELECT IDENT_CURRENT('[truffle]')";

@@ -8,8 +8,8 @@ public class Beacon implements Serializable{
 	
 	private int id;
 	private String name;
-	private long latitude;
-	private long longitude;
+	private String latitude;
+	private String longitude;
 	private String UUID;
 	private String content;
 	private int radius;
@@ -26,16 +26,16 @@ public class Beacon implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public long getLatitude() {
+	public String getLatitude() {
 		return latitude;
 	}
-	public void setLatitude(long latitude) {
+	public void setLatitude(String latitude) {
 		this.latitude = latitude;
 	}
-	public long getLongitude() {
+	public String getLongitude() {
 		return longitude;
 	}
-	public void setLongitude(long longitude) {
+	public void setLongitude(String longitude) {
 		this.longitude = longitude;
 	}
 	public String getUUID() {
