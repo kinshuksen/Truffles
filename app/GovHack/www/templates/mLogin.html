@@ -1,0 +1,43 @@
+<div class="modal">
+  <ion-header-bar>
+    <h1 class="title">Login</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="close()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="menu-header">
+    <form name="form" ng-submit="doLogin()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">email</span>
+          <input type="text" ng-model="loginData.email" required>
+        </label>
+      
+          <label class="item item-input">
+              <span class="input-label">Password</span>
+              <input data-ng-model='loginData.password' type="password" name='password' placeholder='password' required>
+          </label>
+              <div ng-show="form.password.$error.required">
+                  Field required
+              </div>
+
+          <label class="item item-input">
+              <span class="input-label">Confirm Password</span>
+              <input ng-model='loginData.password_verify' type="password" name='confirm_password' placeholder='confirm password' required data-password-verify="user.password">
+            </label>
+          <div ng-show="form.confirm_password.$error.passwordVerify">
+              Fields are not equal!
+          </div>    
+          <div ng-show="form.confirm_password.$error.required">
+                  Field required!
+              </div>
+              
+
+              <label class="item">
+                  <button class="button button-block button-positive" data-password-verify="user.password" type="submit">Register</button>
+              </label>
+</div>
+    </form>
+  </ion-content>
+</div>
+

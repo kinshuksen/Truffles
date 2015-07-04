@@ -1,0 +1,47 @@
+/* Empty. Add your own CSS if you like */
+.btn-bottom-right {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index:999;
+    width:80px;
+}
+
+.bar-header {
+    height: 53px;
+    background-color:rgba(0, 0, 0, 0.53);
+    color:#fff;
+
+}
+
+.tBag {
+    height:40px;
+}
+
+.bar {
+    height: 53px;
+}
+
+.title {
+    min-height: 53px;
+    color:#fff;
+}
+
+.ion-navicon {
+    color:#fff;
+}
+
+.menu-item, .item-complex a {
+    background-color:rgba(0, 0, 0, 0.20)!important;
+    color:#fff;
+    border: none;
+}
+
+.menu-bg {
+    top:0px;
+    background:url("../img/vector.png");
+}
+.menu-header{
+    top:53px;
+}
+

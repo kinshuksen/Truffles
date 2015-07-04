@@ -1,0 +1,55 @@
+<ion-side-menus>
+
+  <ion-pane ion-side-menu-content  drag-content="false">
+    <ion-nav-bar class="nav-title-slide-ios7">
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+
+        <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear ion-navicon-round" menu-toggle="left"></button>
+        </ion-nav-buttons>
+        <ion-nav-buttons side="right">
+            <button class="button button-icon button-clear" menu-toggle="right"><img class="tBag" src="./img/Icons/bag.png" /></button>
+        </ion-nav-buttons>
+     
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+  </ion-pane>
+
+  <ion-side-menu side="left" class="menu-bg">
+    <header class="bar bar-header">
+      <h1 class="title">Achievements</h1>
+    </header>
+    <ion-content class="menu-header">
+      <ion-list>
+        <ion-item class="menu-item" nav-clear menu-close ng-click="login()" href="javascript:void(0);">
+          Login
+        </ion-item>
+        <ion-item class="menu-item" nav-clear menu-close href="#/app/thermo">
+          Thermometer
+        </ion-item>
+        <ion-item class="menu-item" nav-clear menu-close href="#/app/welcome">
+          Welcome
+        </ion-item>
+        <ion-item class="menu-item" nav-clear menu-close href="#/app/map">
+          Map
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+
+    <ion-side-menu side="right" class="menu-bg">
+        <header class="bar bar-header">
+            <h1 class="title">Trufl Bag</h1>
+        </header>
+        <ion-content class="menu-header">
+            <ion-list>
+                <ion-item class="menu-item" nav-clear menu-close ng-click="trufl()" href="javascript:void(0);">
+                    Login
+                </ion-item>
+                
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+
+</ion-side-menus>

@@ -1,0 +1,17 @@
+[
+  { "name": "Restaurants/Food", "code": "FOOD", "Id": 1 },
+  { "name": "Sports/Nature/Outdoors", "code": "NATURE", "Id": 2 },
+  { "name": "History/Arts/Culture", "code": "CULTURE", "Id": 3 },
+  { "name": "Wines/Beers", "code": "WINE", "Id": 4 },
+  { "name": "Fun/Entertainment", "code": "FUN", "Id": 5 },
+  { "name": "Accomodation", "code": "ACCOM", "Id": 6 },
+  { "name": "Info/Tourist Services", "code": "INFO", "Id": 7 }
+]
+
+
+
+
+
+
+
+

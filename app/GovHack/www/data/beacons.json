@@ -1,0 +1,13 @@
+[
+
+  {
+    "beacons": [
+      {"name": "Green", "macAddress": "F5:90:74:A8:B3:D7" },
+      {"name": "Blue", "macAddress": "E7:CB:50:67:F2:B2" },
+      {"name": "Purple", "macAddress": "FE:63:F5:4F:18:5C" }
+    ]
+  }
+
+
+]
+

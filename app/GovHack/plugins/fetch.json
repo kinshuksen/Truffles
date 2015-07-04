@@ -1,0 +1,42 @@
+{
+    "org.apache.cordova.device": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.device"
+        }
+    },
+    "org.apache.cordova.geolocation": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.geolocation"
+        }
+    },
+    "com.ionic.keyboard": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/driftyco/ionic-plugin-keyboard.git",
+            "subdir": "."
+        }
+    },
+    "pl.makingwaves.estimotebeacons": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/evothings/phonegap-estimotebeacons.git",
+            "subdir": "."
+        }
+    },
+    "com.megster.cordova.ble": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/don/cordova-plugin-ble-central.git",
+            "subdir": "."
+        }
+    },
+    "com.toluhta.immersify": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/toluhta/Immersify.git",
+            "subdir": "."
+        }
+    }
+}
