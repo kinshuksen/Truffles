@@ -9,6 +9,7 @@ public class RestURIConstants {
 	
 	
 	public static final String BAG_TRUFFLE = "/truffle/bag_truffle";
+	public static final String GET_TRUFFLES = "/truffle/get_truffle";
 	
 	public static final String GET_ACHIEVEMENTS = "/user/achievements";
 	public static final String GET_CHALLENGES = "/user/challenges";

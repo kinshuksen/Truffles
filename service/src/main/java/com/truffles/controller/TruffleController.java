@@ -1,5 +1,7 @@
 package com.truffles.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.truffles.dao.TruffleDao;
+import com.truffles.model.Truffle;
 
 /**
  * Handles requests for the Employee service.
@@ -26,7 +29,15 @@ public class TruffleController {
 	   @RequestMapping(value = RestURIConstants.BAG_TRUFFLE, method = RequestMethod.GET)
 	   	public @ResponseBody Integer bagTruffle(String poiId, String latitude, String longitude, String name, int userId, String poiType) throws Exception {
 	    	System.out.println("Starting checkIn()");
-	    	return truffleDao.bagTruffle(poiId, latitude, longitude, name, userId, poiType);
+	    	Integer trufffle = truffleDao.bagTruffle(poiId, latitude, longitude, name, userId, poiType);
+	    	//truffleDao.updateAchievements();
+	    	return trufffle;
+	   	}
+	   
+	   @RequestMapping(value = RestURIConstants.GET_TRUFFLES, method = RequestMethod.GET)
+	   	public @ResponseBody List<Truffle> getTruffles(int userId) throws Exception {
+	    	System.out.println("Starting checkIn()");
+	    	return truffleDao.getTruffles(userId);
 	   	}
       
 	

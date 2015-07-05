@@ -41,7 +41,7 @@ public class POIController {
     
     
     @RequestMapping(value = RestURIConstants.GET_POI_TEST, method = RequestMethod.GET)
-   	public @ResponseBody POI[] getPOITest(String latLong, int dist) {
+   	public @ResponseBody POI[] getPOITest(String latitude, String longitude) {
     	System.out.println("Starting getPOITest()");
     	List<POI> pois = new ArrayList<POI>();
     	

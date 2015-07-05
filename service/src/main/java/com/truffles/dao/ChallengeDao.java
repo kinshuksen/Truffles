@@ -33,7 +33,7 @@ public class ChallengeDao {
 				Challenge ch = new Challenge();
 				ch.setId((rs.getInt("id")));
 				ch.setDescription(rs.getString("description"));
-				ch.setPoi_type_id(rs.getString("poi_type_id"));
+				//ch.setPoi_type_id(rs.getString("poi_type"));
 				ch.setTarget(rs.getInt("target"));
 				chal.add(ch);
 			}

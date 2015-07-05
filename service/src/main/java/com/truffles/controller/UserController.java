@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.truffles.dao.AchievementDao;
 import com.truffles.dao.UserDao;
 
 /**
@@ -33,8 +34,10 @@ public class UserController {
 	private UserDao uDao;
 
 	
-	
-	
+	@Autowired
+	@Qualifier("achievementDao")
+	private AchievementDao achievementDao;
+
  
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
@@ -47,6 +50,7 @@ public class UserController {
         //TODO - Add validation to check nulls. WIll include service layer later
         try {
 			id = uDao.registerUser(email, token, password, deviceUUID);
+			achievementDao.insertAchievements(id);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
