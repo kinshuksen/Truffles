@@ -1,7 +1,7 @@
 angular.module('app.services.auth', [])
 
 
-.factory('$auth', function ($rootScope, $localStorage, $api) {
+.factory('$auth', function ($rootScope, $localStorage, $api, $window) {
     return {
         checkLogin: function () {
             // Check if logged in and fire events
@@ -27,6 +27,7 @@ angular.module('app.services.auth', [])
                           //much success so store this Id
                           $localStorage.set("userID", data.id);
                           $rootScope.$broadcast('app.loggedIn');
+                           $window.location.reload(true);
                           //TODO toast success
                       }
                   },

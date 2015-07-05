@@ -1,7 +1,7 @@
 angular.module('app.controllers.abstract', [])
 
     //APP CONTROLLER
-    .controller('AppCtrl', function ($scope, $rootScope, $ionicModal, $timeout, $auth, $ionicLoading, $ionicPlatform, $intro, $api) {
+    .controller('AppCtrl', function ($window, $scope, $rootScope, $ionicModal, $timeout, $auth, $ionicLoading, $ionicPlatform, $intro, $api) {
         console.log("abstract controller run")
         $scope.distance = 0;
         // Form data for the login modal
@@ -50,6 +50,10 @@ angular.module('app.controllers.abstract', [])
             $scope.mLogin.show();
         };
 
+        if (achievements.length == 0) {
+            $scope.login();
+        }
+
         // Open the thermo modal
         $scope.thermo = function () {
             $scope.mThermo.show();
@@ -79,7 +83,7 @@ angular.module('app.controllers.abstract', [])
             console.log(JSON.stringify(nearables));
             var dist = nearables.beacons[0].distance;
             $scope.distance = 100 - dist;
-            $rootScope.update();
+            $scope.update();
             console.log($scope.distance);
         }
 
@@ -113,7 +117,7 @@ angular.module('app.controllers.abstract', [])
         // loading popup event handler
         $scope.$on('app.loading', function (e) {
             $ionicLoading.show({
-                template: '<ion-spinner class="crescent-light"></ion-spinner>'
+                template: '<ion-spinner class="crescent"></ion-spinner>'
             });
         });
 
@@ -141,6 +145,7 @@ angular.module('app.controllers.abstract', [])
         $scope.doLogin = function () {
             console.log($scope.loginData);
             $auth.login($scope.loginData);
+           
         };
 
         //terms and conditions check to see if terms have been accepted on start up
@@ -157,6 +162,7 @@ angular.module('app.controllers.abstract', [])
 
         $scope.collect = function (context) {
             $api.getCheckin(context);
+            $window.location.reload(true);
         }
 
         function RGB2HTML(red, green, blue) {
@@ -219,6 +225,8 @@ angular.module('app.controllers.abstract', [])
             if (unit == "N") { dist = dist * 0.8684 }
             return dist
         };
+
+
     });
 
         // !! commented for now because it makes the soft system buttons persist. !!

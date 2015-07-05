@@ -2,13 +2,13 @@
     "org.apache.cordova.device": {
         "source": {
             "type": "registry",
-            "id": "org.apache.cordova.device"
+            "id": "org.apache.cordova.device@0.3.0"
         }
     },
     "org.apache.cordova.geolocation": {
         "source": {
             "type": "registry",
-            "id": "org.apache.cordova.geolocation"
+            "id": "org.apache.cordova.geolocation@0.3.12"
         }
     },
     "com.ionic.keyboard": {

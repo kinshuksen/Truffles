@@ -13,8 +13,8 @@
         </ion-scroll>
         <br />
         <div ng-class="collected() ? 'hide' : ''">>
-            <button class="button button-full button-royal" ng-class="inPOIRange() ? '' : 'disabled'" ng-click="collect(truffleContext)">Grab Truffle</button>
-                     
+            <button class="button button-full button-royal"  ng-click="collect(truffleContext)">Grab Truffle</button>
+            <!--ng-class="inPOIRange() ? '' : 'disabled'"-->
                 
             <p ng-class="inPOIRange() ? 'hide' : ''">Move closer to the truffle to grab it!</p>
         </div>

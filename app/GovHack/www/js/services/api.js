@@ -7,7 +7,7 @@ angular.module('app.services.api', [])
  
     var isInitialised = $localStorage.get('isInitialised');
     var playedIntro = $localStorage.get('playedIntro');
-
+    
     //check for first a time run and put things in local storage if its a first time run
     if (isInitialised) {
         console.log("Everything is stored... Continue");
