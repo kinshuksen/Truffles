@@ -27,13 +27,15 @@ angular.module('app', ['ionic',
     var isAndroid = ionic.Platform.isAndroid();
     var isWindowsPhone = ionic.Platform.isWindowsPhone();
 
-    $rootScope.achivements = null;
+    $rootScope.achievements = null;
     $api.getAchievements().then(function (res) {
         $rootScope.achievements = res;
+        console.log(res);
     });
     $rootScope.challenges = null;
     $api.getChallenges().then(function (res) {
         $rootScope.challenges = res;
+        console.log(res);
     });
 
     $rootScope.truffles = null;
