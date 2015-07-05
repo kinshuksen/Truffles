@@ -418,7 +418,8 @@
     "www\\templates\\mtruffle.html",
     "config.xml",
     "www\\img\\Std-Truffle.png",
-    "www\\templates\\mthermo.html"
+    "www\\templates\\mthermo.html",
+    "www\\img\\Icons\\location.png"
   ],
   "deletedFilesIos": [],
   "addedPluginsIos": [
@@ -431,9 +432,7 @@
   ],
   "deletedPluginsIos": [],
   "changedFiles": [
-    "plugins\\android.json",
-    "www\\css\\style.css",
-    "www\\css\\intro.css"
+    "plugins\\android.json"
   ],
   "deletedFiles": [],
   "addedPlugins": [],

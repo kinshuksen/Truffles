@@ -28,7 +28,7 @@ angular.module('app.controllers.map', [])
 
                 var playerIcon = {
                     //set this as the players localtion icon
-                    url: 'img/Icons/bag.png',
+                    url: 'img/Icons/location.png',
                     scaledSize: new google.maps.Size(40, 40, "%", "%")
                 };
 

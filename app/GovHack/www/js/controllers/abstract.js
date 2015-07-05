@@ -6,7 +6,7 @@ angular.module('app.controllers.abstract', [])
             // Form data for the login modal
             $scope.loginData = {};
 
-            $rootScope.update = function() {
+            $rootScope.update = function () {
                 $('#thermo').thermometer('setValue', $scope.distance);
             };
 
@@ -68,6 +68,9 @@ angular.module('app.controllers.abstract', [])
                 $scope.dist = distance(truffle.latitude, truffle.longitude, myloc.position.A, myloc.position.F, "K")
                 $scope.inPOIRange = function () {
                     return ($scope.dist < 0.02)
+                }
+                $scope.collected = function () {
+                    return false; //insert logic to check if we have collected this truffle, used to show/hide the "collect" button on truffle modal
                 }
                 $scope.mTruffle.show();
             };
@@ -176,7 +179,7 @@ angular.module('app.controllers.abstract', [])
                     }
                 });
             };
-            
+
             function updateThermometer() {
                 $('#thermo').thermometer('setValue', $scope.distance);
                 //window.setTimeout(updateThermometer(), 2500);
@@ -190,37 +193,29 @@ angular.module('app.controllers.abstract', [])
                 initialize();
             };
 
+
             // !! commented for now because it makes the soft system buttons persist. !!
             // when the hardware back button is pressed, stop the thermometer from scanning (pretty hacky to do it on every back press but its chill cause "if (angular.isDefined(estimote)) { DO THE STOP THING }"
             //$ionicPlatform.onHardwareBackButton(function() {
             //    $scope.stopScan(); 
             //});
-        })
 
-    //This routine calculates the distance between two points (given the     
-    //latitude/longitude of those points). It is being used to calculate     
-    //the distance between two locations using GeoDataSource (TM) prodducts  
-    //Passed to function:                                                    
-    //    lat1, lon1 = Latitude and Longitude of point 1 (in decimal degrees)  
-    //    lat2, lon2 = Latitude and Longitude of point 2 (in decimal degrees)  
-    //    unit = the unit you desire for results                               
-    //           where: 'M' is statute miles (default)                         
-    //                  'K' is kilometers                                      
-    //                  'N' is nautical miles                                 
-    function distance(lat1, lon1, lat2, lon2, unit) {
-        var radlat1 = Math.PI * lat1 / 180
-        var radlat2 = Math.PI * lat2 / 180
-        var radlon1 = Math.PI * lon1 / 180
-        var radlon2 = Math.PI * lon2 / 180
-        var theta = lon1 - lon2
-        var radtheta = Math.PI * theta / 180
-        var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
-        dist = Math.acos(dist)
-        dist = dist * 180 / Math.PI
-        dist = dist * 60 * 1.1515
-        if (unit == "K") { dist = dist * 1.609344 }
-        if (unit == "N") { dist = dist * 0.8684 }
-        return dist
-    };
+            //unit = 'K' for kilometers
+            function distance(lat1, lon1, lat2, lon2, unit) {
+                var radlat1 = Math.PI * lat1 / 180
+                var radlat2 = Math.PI * lat2 / 180
+                var radlon1 = Math.PI * lon1 / 180
+                var radlon2 = Math.PI * lon2 / 180
+                var theta = lon1 - lon2
+                var radtheta = Math.PI * theta / 180
+                var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+                dist = Math.acos(dist)
+                dist = dist * 180 / Math.PI
+                dist = dist * 60 * 1.1515
+                if (unit == "K") { dist = dist * 1.609344 }
+                if (unit == "N") { dist = dist * 0.8684 }
+                return dist
+            };
+        });
 
 

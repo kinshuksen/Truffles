@@ -87,3 +87,6 @@
 .modal {
     background-color: #daf1ff;
 }
+.hide {
+    display: none;
+}
