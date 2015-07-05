@@ -218,7 +218,7 @@
 		options: {
 			height: 700,
 			minValue: 0,
-			maxValue: 95,
+			maxValue: 100,
 			startValue: 0,
 			topText: "",
 			bottomText: "",

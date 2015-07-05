@@ -7,7 +7,7 @@
     <ion-content class="menu-header">
         <div id="thermo-container">
             <!--<h3>{{inRange()}}</h3>-->
-            <button id="truffleButton" class="button button-royal" ng-class="inRange() ? '' : 'disabled'">Grab Truffle</button>
+            <button id="truffleButton" class="button button-royal" ng-click="collect(truffleContext);close();stopScan()" ng-class="inRange() ? '' : 'disabled'">Collect Truffle</button>
             <div id="thermo"></div>
         </div>
         <!--<h3>{{distance}}</h3>--> 
