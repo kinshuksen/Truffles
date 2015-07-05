@@ -3,6 +3,7 @@ angular.module('app.controllers.map', [])
 
         .controller('MapCtrl', function ($scope, $ionicLoading, $ionicPopup, $cordovaGeolocation, $api) {
 
+
             var map;
             var pois;
             var myloc;
@@ -28,8 +29,8 @@ angular.module('app.controllers.map', [])
 
                 var playerIcon = {
                     //set this as the players localtion icon
-                    url: 'img/Icons/bag.png',
-                    scaledSize: new google.maps.Size(40, 40, "%", "%")
+                    url: 'img/Icons/location.png',
+                    scaledSize: new google.maps.Size(20, 20, "%", "%")
                 };
 
                 //setup my location marker

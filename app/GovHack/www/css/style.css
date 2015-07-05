@@ -7,6 +7,16 @@
     width:80px;
 }
 
+.truflrTitle {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    margin-left: -60px;
+    z-index:99999;
+    width:120px;
+}
+
+
 .bar-header {
     height: 53px;
     background-color:rgba(0, 0, 0, 0.53);
@@ -14,7 +24,7 @@
 
 }
 
-.tBag {
+.headerButtons {
     height:40px;
 }
 
@@ -32,16 +42,33 @@
 }
 
 .menu-item, .item-complex a {
-    background-color:rgba(0, 0, 0, 0.20)!important;
-    color:#fff;
+    background-color:   rgba(0, 0, 0, 0.10)!important;
+    color:  #fff;
     border: none;
 }
 
 .menu-bg {
-    top:0px;
-    background:url("../img/vector.png");
+    top:    0px;
+    background: url("../img/vector.png");
 }
 .menu-header{
-    top:53px;
+    top:    53px;
 }
 
+#thermo-container {
+    text-align: center;
+}
+
+#thermo-container button{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#thermo {
+    margin-left: 25%;
+}
+
+
+.pale-teal {
+    background-color: #99ffff;
+}

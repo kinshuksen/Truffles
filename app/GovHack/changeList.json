@@ -170,7 +170,6 @@
     "plugins\\com.megster.cordova.ble\\examples\\battery\\hooks\\README.md",
     "plugins\\fetch.json",
     "plugins\\com.ionic.keyboard\\src\\blackberry10\\native\\device\\libKeyboard.so",
-    "config.xml",
     "plugins\\com.ionic.keyboard\\src\\blackberry10\\native\\simulator\\public\\json_value.o",
     "plugins\\pl.makingwaves.estimotebeacons\\plugin\\src\\ios\\Headers\\ESTDefinitions.h",
     "plugins\\com.toluhta.immersify\\src\\android\\ImmersiveMode.java",
@@ -414,11 +413,29 @@
     "plugins\\pl.makingwaves.estimotebeacons\\examples\\beacon-finder\\www\\js\\screen-scan-beacons.js",
     "www\\lib\\ionic\\scss\\_radio.scss",
     "www\\img\\Icons\\NATURE.png",
-    "www\\templates\\mTruffle.html"
+    "www\\templates\\mTruffle.html",
+    "www\\templates\\mThermo.html",
+    "www\\img\\Icons\\location.png",
+    "config.xml",
+    "www\\img\\Icons\\GOLDEN.png",
+    "www\\img\\header.png"
   ],
   "deletedFilesIos": [
     "www\\img\\Icons\\Sports-nature-outdoors-pin.png",
-    "www\\templates\\mIntro - Copy.html"
+    "www\\templates\\mIntro - Copy.html",
+    "changeList.json.LOCAL.json",
+    "changeList.json.BASE.json",
+    "changeList.json.REMOTE.json",
+    "www\\img\\Icons\\Golden-Truffle.png",
+    "www\\img\\Logo-3-Pink-60w.png",
+    "www\\img\\Badges\\Sailor-King.png",
+    "www\\img\\Badges\\Badge-Historian.png",
+    "www\\img\\Badges\\Badge-Tourist.png",
+    "www\\img\\Badges\\Sommelier.png",
+    "www\\img\\Badges\\Badge-Hungry.png",
+    "www\\img\\Badges\\Badge-tour-operator.png",
+    "www\\img\\Badges\\Badge-Noob.png",
+    "www\\img\\Badges\\Alfresco.png"
   ],
   "addedPluginsIos": [
     "org.apache.cordova.device@0.3.0",
@@ -431,7 +448,7 @@
   "deletedPluginsIos": [],
   "changedFiles": [
     "plugins\\android.json",
-    "www\\js\\services\\api.js"
+    "www\\css\\style.css"
   ],
   "deletedFiles": [],
   "addedPlugins": [],

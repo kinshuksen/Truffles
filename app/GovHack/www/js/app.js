@@ -6,7 +6,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('app', ['ionic',
     'app.controllers.abstract',
-    'app.controllers.hotcold',
+    //'app.controllers.hotcold',
     'app.controllers.map',
     'app.controllers.auth',
     'app.services.auth',
@@ -26,6 +26,20 @@ angular.module('app', ['ionic',
     var isIOS = ionic.Platform.isIOS();
     var isAndroid = ionic.Platform.isAndroid();
     var isWindowsPhone = ionic.Platform.isWindowsPhone();
+
+    $rootScope.achivements = null;
+    $api.getAchievements().then(function (res) {
+        $rootScope.achievements = res;
+    });
+    $rootScope.challenges = null;
+    $api.getChallenges().then(function (res) {
+        $rootScope.challenges = res;
+    });
+
+    $rootScope.truffles = null;
+    $api.getTruffles().then(function (res) {
+        $rootScope.truffles = res;
+    });
 
     function successCallback(successMessage) {
         console.log(successMessage);
