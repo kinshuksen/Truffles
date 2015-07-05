@@ -31,9 +31,9 @@ public class AchievementController {
 	
     
    @RequestMapping(value = RestURIConstants.GET_ACHIEVEMENTS, method = RequestMethod.GET)
-  	public @ResponseBody List<Achievement> getAchivements(int userId) throws SQLException {
+  	public @ResponseBody List<Achievement> getAchievements(int userId) throws SQLException {
    	System.out.println("Starting getAchivements()");
-   	return achievementDao.getProgress(userId);
+   	return achievementDao.getAchievements(userId);
   	}
 	
 	

@@ -4,14 +4,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+
+import com.truffles.model.Truffle;
 
 public class TruffleDao {
 	
@@ -59,4 +60,33 @@ public class TruffleDao {
         return newId;
         
     }
+	
+	public List<Truffle> getTruffles(int userId){
+		List<Truffle> truffle = new ArrayList<Truffle>();
+		String query = "SELECT * FROM [truffle] WHERE user_id = ?";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			pstmt = dataSource.getConnection().prepareStatement(query);
+			pstmt.setInt(1, userId);
+			rs = pstmt.executeQuery();
+			while(rs.next()){
+				Truffle tr = new Truffle();
+				tr.setId(rs.getInt("id"));
+				tr.setPoi_id(rs.getString("poi_id"));
+				tr.setName(rs.getString("name"));
+				tr.setLatitude(rs.getString("latitude"));
+				tr.setLongitude(rs.getString("longitude"));
+				tr.setCheckinDate(rs.getDate("checkin_date"));
+				tr.setUserId(rs.getInt("user_id"));
+				tr.setPoi_type(rs.getString("poi_type"));
+				truffle.add(tr);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return truffle;
+	}
+	
 }

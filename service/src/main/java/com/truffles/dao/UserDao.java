@@ -19,8 +19,8 @@ public class UserDao {
     @Qualifier("dbDataSource")
     private DataSource dataSource;
 	
-	public Integer registerUser(String email, String token, String password, String deviceUUID) throws SQLException {
-		Integer newId = null;
+	public User registerUser(String email, String token, String password, String deviceUUID) throws SQLException {
+		User newId = new User();
 		String query = "INSERT INTO [user] values (?,?,?,?)";
 		PreparedStatement pstmt = null;
 		PreparedStatement pstmt1 = null;
@@ -39,8 +39,10 @@ public class UserDao {
 			pstmt1 = dataSource.getConnection().prepareStatement(returnQuery);
 			rs = pstmt1.executeQuery();
 			while(rs.next()){
-				newId = rs.getInt(1);
-				System.out.println(newId);
+				newId.setId(rs.getInt(1));
+				newId.setEmail(email);
+				newId.setToken(token);
+				newId.setDeviceUUID(deviceUUID);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

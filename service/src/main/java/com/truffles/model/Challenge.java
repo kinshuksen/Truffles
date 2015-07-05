@@ -8,7 +8,7 @@ public class Challenge implements Serializable{
 	
 	private int id;
 	private String description;
-	private String poi_type_id;
+	private String poi_type;
 	private int target;
 	
 	
@@ -24,11 +24,11 @@ public class Challenge implements Serializable{
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getPoi_type_id() {
-		return poi_type_id;
+	public String getPoi_type() {
+		return poi_type;
 	}
-	public void setPoi_type_id(String poi_type_id) {
-		this.poi_type_id = poi_type_id;
+	public void setPoi_type_id(String poi_type) {
+		this.poi_type = poi_type;
 	}
 	public int getTarget() {
 		return target;
