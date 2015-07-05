@@ -25,9 +25,9 @@ angular.module('app.services.auth', [])
                       }
                       else {
                           //much success so store this Id
-                          $localStorage.set("userID", data.ResponseObject.TenderUserId);
-                          $api.updateDeviceToken($localStorage.get("regID"), $localStorage.get("deviceType"));
+                          $localStorage.set("userID", data.id);
                           $rootScope.$broadcast('app.loggedIn');
+                          //TODO toast success
                       }
                   },
                   function (error) {
