@@ -1,7 +1,7 @@
 angular.module('app.controllers.map', [])
 
 
-        .controller('MapCtrl', function ($scope, $ionicLoading, $ionicPopup, $cordovaGeolocation, $api) {
+        .controller('MapCtrl', function ($scope, $ionicPopup, $cordovaGeolocation, $api) {
 
 
             var map;
@@ -100,13 +100,11 @@ angular.module('app.controllers.map', [])
             // this function used to find gps location and center the map on it 
             var centerOnMe = function () {
                 if (!$scope.map) {
+                    $scope.notLoading();
                     return;
                 }
 
-                $scope.loading = $ionicLoading.show({
-                    content: 'Getting current location...',
-                    showBackdrop: true
-                });
+                $scope.loading();
 
                 $cordovaGeolocation
                   .getCurrentPosition({ timeout: 5000, enableHighAccuracy: true })
@@ -115,13 +113,13 @@ angular.module('app.controllers.map', [])
                     var me = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
                     updateMyLoc(me);
                     $scope.map.setCenter(me);
-                    $scope.loading.hide();
+                    $scope.notLoading();
                     doWatch();
 
                   }, function (error) {
                       showAlert('Unable to get location: ' + error.message);
                       $scope.errorMsg = "Error : " + error.message;
-                      $scope.loading.hide();
+                      $scope.notLoading();
                   });
 
             };
@@ -140,18 +138,13 @@ angular.module('app.controllers.map', [])
                 }
 
                 clearMarkers();
-
-                $scope.loading = $ionicLoading.show({
-                    content: 'Getting some trufls...',
-                    showBackdrop: true
-                });
                 centerOnMe();
 
                 $api.getMarkers(myloc).then(function (result) {
                     console.log(result);
                     locations = result;
                     applyMarkers();
-                    $scope.loading.hide();
+                
                 });
 
                 var applyMarkers = function() {

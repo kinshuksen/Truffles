@@ -1,4 +1,8 @@
 /* Empty. Add your own CSS if you like */
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
 .btn-bottom-right {
     position: absolute;
     bottom: 10px;
@@ -42,15 +46,26 @@
 }
 
 .menu-item, .item-complex a {
-    background-color:   rgba(0, 0, 0, 0.10)!important;
+    /*background-color: rgba(204, 102, 153, 0.45)!important;*/
+
+    background-color: rgba(0, 0, 0, 0.35)!important;
     color:  #fff;
     border: none;
 }
 
-.menu-bg {
+.menu-bg-left {
     top:    0px;
-    background: url("../img/contact.jpg");
+    background: url("../img/left.jpg");
+    background-position-x: center;
 }
+
+
+.menu-bg-right {
+    top:    0px;
+    background: url("../img/right.jpg");
+    background-position-x: center;
+}
+
 .menu-header{
     top:    53px;
 }
@@ -100,3 +115,8 @@
 .hide {
     display: none;
 }
+.h80 { height:80px;}
+
+.h40 { height:40px;}
+
+.white {color: #fff;}

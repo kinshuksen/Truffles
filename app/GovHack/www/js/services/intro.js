@@ -5,14 +5,14 @@ angular.module('app.services.intro', [])
     return {
         checkStatus: function () {
             // Check if terms and conditions have been accepted and fire events
-            if (this.isLoggedIn()) {
-                $rootScope.$broadcast('app.termsAccepted');
+            if (this.introPlayed()) {
+                $rootScope.$broadcast('app.introPlayed');
             } else {
-                $rootScope.$broadcast('app.termsNotAccepted');
+                $rootScope.$broadcast('app.introNotPlayed');
             }
         },
-        isLoggedIn: function () {
-            if ($localStorage.get("acceptedTCs")) { return true }
+        introPlayed: function () {
+            if ($localStorage.get("introPlayed")) { return true }
             else { return false }
         }
     }

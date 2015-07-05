@@ -61,18 +61,18 @@ angular.module('app.controllers.abstract', [])
             $scope.mIntro.show();
         };
 
-            // Open the truffle modal
-            $scope.showTruffle = function (truffle, myloc) {
-                $scope.truffleContext = truffle;
-                $scope.dist = distance(truffle.latitude, truffle.longitude, myloc.position.A, myloc.position.F, "K")
-                $scope.inPOIRange = function () {
-                    return ($scope.dist < 0.02)
-                }
-                $scope.collected = function () {
-                    return false; //insert logic to check if we have collected this truffle, used to show/hide the "collect" button on truffle modal
-                }
-                $scope.mTruffle.show();
-            };
+        // Open the truffle modal
+        $scope.showTruffle = function (truffle, myloc) {
+            $scope.truffleContext = truffle;
+            $scope.dist = distance(truffle.latitude, truffle.longitude, myloc.position.A, myloc.position.F, "K")
+            $scope.inPOIRange = function () {
+                return ($scope.dist < 0.02)
+            }
+            $scope.collected = function () {
+                return false; //insert logic to check if we have collected this truffle, used to show/hide the "collect" button on truffle modal
+            }
+            $scope.mTruffle.show();
+        };
 
 
         $scope.onRange = function (nearables) {
@@ -127,6 +127,16 @@ angular.module('app.controllers.abstract', [])
             $rootScope.$broadcast('app.notLoading');
         }
 
+        //A loading hide abstract method which can be accessed from any controller
+        $scope.loading = function () {
+            $rootScope.$broadcast('app.loading');
+        }
+
+        // loading popup event handler
+        $scope.$on('app.loggedIn', function (e) {
+            $scope.close();
+        })
+
         //Perform the login action when the user submits the login form
         $scope.doLogin = function () {
             console.log($scope.loginData);
@@ -142,6 +152,7 @@ angular.module('app.controllers.abstract', [])
         $scope.$on('app.welcomeNotPlayed', function (e) {
             console.log("intro not played event fired");
             $scope.intro.show();
+            $localStorage.set("introPlayed", true);
         });
 
         $scope.collect = function (context) {
