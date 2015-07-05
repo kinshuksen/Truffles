@@ -104,4 +104,5 @@
   <vs:plugin name="com.megster.cordova.ble" version="0.1.9" />
   <preference name="Fullscreen" value="True" />
   <vs:plugin name="com.toluhta.immersify" version="0.1.0" />
+  <preference name="Orientation" value="Default" />
 </widget>
