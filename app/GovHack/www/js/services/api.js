@@ -19,14 +19,13 @@ angular.module('app.services.api', [])
             $localStorage.set("deviceUID", $cordovaDevice.getUUID());
         });
         //init a blank userID
-        $localStorage.set("userID", 0);
+        $localStorage.set("userID", 1);
         //init a blank regID
         $localStorage.set("regID", 0);
         //set the base url for service calls
         $localStorage.set('baseUrl', baseUrl);
         $localStorage.set("isInitialised", true);
     }
-
 
     //query data helper method.
     function EncodeQueryData(data)
@@ -99,13 +98,16 @@ angular.module('app.services.api', [])
     },
 
     getAchievements: function () {
-        return GetData(baseUrl + "/poi/getachievements?", { userID: $localStorage.get("userID") }, false);
+        return GetData(baseUrl + "/user/achievements?", { userID: $localStorage.get("userID") }, false);
     },
 
+    getTruffles: function () {
+        return GetData(baseUrl + "/truffle/get_truffle?", { userID: $localStorage.get("userID") }, false);
+    },
    
     getCheckin: function (context) {
         var payLoad = [];
-        return GetData(baseUrl + "/truffle/bag_truffle?", { poiId: context.poiId, latitude: context.latitude, logitude: context.longitude, name: context.name, userId: $localStorage.get("userId"), poiTypeId: context.poiType}, false);
+        return GetData(baseUrl + "/truffle/bag_truffle?", { poiId: context.poiId, latitude: context.latitude, longitude: context.longitude, name: context.name, userId: $localStorage.get("userId"), poiTypeId: context.poiType}, false);
     },
 
       //Get web service response data example
@@ -117,11 +119,11 @@ angular.module('app.services.api', [])
     postRegister: function(context) {
         console.log(context);
         var payload = [{email: context.email, token: null, password: context.password, deviceUID: $localStorage.get("deviceUID") }];
-        return PostData(baseUrl + "user/register", payload);
+        return GetData(baseUrl + "user/register", payload);
     },
 
       //Post example passing in a JSON obj
-    GetRegister: function (context) {
+    setRegister: function (context) {
         console.log(context);
         var deviceUID = "[{deviceUID: " + $localStorage.get("deviceUID") + "}]";
         return GetData(baseUrl + "user/login", context);
