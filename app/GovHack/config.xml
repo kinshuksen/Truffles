@@ -96,7 +96,7 @@
   <vs:plugin name="pl.makingwaves.estimotebeacons" version="0.7.1" />
   <vs:plugin name="com.ionic.keyboard" version="1.0.4" />
   <preference name="android-targetSdkVersion" value="21" />
-  <preference name="android-minSdkVersion" value="21" />
+  <preference name="android-minSdkVersion" value="19" />
   <preference name="KeepRunning" value="False" />
   <preference name="ShowTitle" value="True" />
   <preference name="InAppBrowserStorageEnabled" value="False" />
