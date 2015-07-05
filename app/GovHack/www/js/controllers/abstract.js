@@ -1,7 +1,7 @@
 angular.module('app.controllers.abstract', [])
 
     //APP CONTROLLER
-    .controller('AppCtrl', function ($window, $scope, $rootScope, $ionicModal, $timeout, $auth, $ionicLoading, $ionicPlatform, $intro, $api) {
+    .controller('AppCtrl', function ($window, $scope, $rootScope, $ionicModal, $timeout, $auth, $ionicLoading, $ionicPlatform, $localStorage, $intro, $api) {
         console.log("abstract controller run")
         $scope.distance = 0;
         // Form data for the login modal
@@ -45,14 +45,17 @@ angular.module('app.controllers.abstract', [])
             $scope.mTruffle.hide();
         };
 
+
+        $scope.closeIntro = function () {
+            $scope.mIntro.hide();
+        };
+
         // Open the login modal
         $scope.login = function () {
             $scope.mLogin.show();
         };
 
-        if (achievements.length == 0) {
-            $scope.login();
-        }
+ 
 
         // Open the thermo modal
         $scope.thermo = function () {
@@ -139,6 +142,19 @@ angular.module('app.controllers.abstract', [])
         // loading popup event handler
         $scope.$on('app.loggedIn', function (e) {
             $scope.close();
+        })
+
+        // loading popup event handler
+        $scope.$on('app.notLoggedIn', function (e) {
+            if ($localStorage.get("introPlayed")) {
+                $scope.login();
+            }
+        })
+
+        // loading popup event handler
+        $scope.$on('app.introNotPlayed', function (e) {
+            $scope.intro();
+            $localStorage.set("introPlayed", true);
         })
 
         //Perform the login action when the user submits the login form

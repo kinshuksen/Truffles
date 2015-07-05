@@ -29,7 +29,7 @@ angular.module('app.services.localStorage', [])
       }
     },
     isLoggedIn: function() {
-      if($localStorage.get("playedIntro")){return true}
+      if($localStorage.get("introPlayed")){return true}
       else{return false}
     }
   }

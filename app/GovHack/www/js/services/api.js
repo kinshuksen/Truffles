@@ -25,6 +25,7 @@ angular.module('app.services.api', [])
         //set the base url for service calls
         $localStorage.set('baseUrl', baseUrl);
         $localStorage.set("isInitialised", true);
+        $rootScope.$broadcast("app.introNotPlayed");
     }
 
     //query data helper method.

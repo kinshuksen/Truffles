@@ -31,6 +31,9 @@ angular.module('app', ['ionic',
     $api.getAchievements().then(function (res) {
         $rootScope.achievements = res;
         console.log(res);
+        if (res.length == 0) {
+            $rootScope.$broadcast("app.notLoggedIn");
+        }
     });
     $rootScope.challenges = null;
     $api.getChallenges().then(function (res) {
