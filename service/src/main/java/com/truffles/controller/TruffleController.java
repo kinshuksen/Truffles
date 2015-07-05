@@ -1,7 +1,5 @@
 package com.truffles.controller;
 
-import java.sql.SQLException;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,10 +23,10 @@ public class TruffleController {
 	@Qualifier("truffleDao")
 	private TruffleDao truffleDao;
 	
-	   @RequestMapping(value = RestURIConstants.CHECK_IN, method = RequestMethod.GET)
-	   	public @ResponseBody Integer checkIn(String poiId, String latitude, String longitude, String name, int beaconId, int userId, int poiTypeId) throws SQLException {
+	   @RequestMapping(value = RestURIConstants.BAG_TRUFFLE, method = RequestMethod.GET)
+	   	public @ResponseBody Integer bagTruffle(String poiId, String latitude, String longitude, String name, int userId, String poiType) throws Exception {
 	    	System.out.println("Starting checkIn()");
-	    	return truffleDao.checkIn(poiId, latitude, longitude, name, beaconId, userId, poiTypeId);
+	    	return truffleDao.bagTruffle(poiId, latitude, longitude, name, userId, poiType);
 	   	}
       
 	

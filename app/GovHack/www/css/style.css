@@ -68,7 +68,35 @@
     margin-left: 25%;
 }
 
-
 .pale-teal {
     background-color: #99ffff;
+}
+
+.mTruffle {
+    text-align: center;
+}
+
+.mTruffle img {
+    width: 25%
+}
+
+.mTruffle p {
+    text-align: center;
+}
+
+.mTruffle h2 {
+    padding: 0 30px;
+    text-align: center;
+}
+
+.mTruffle ion-scroll {
+    padding: 0 30px 15px 30px;
+    height: 200px;
+}
+
+.modal {
+    background-color: #daf1ff;
+}
+.hide {
+    display: none;
 }

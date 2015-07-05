@@ -1,12 +1,20 @@
 <div class="modal">
     <ion-header-bar>
         <div class="buttons">
-            <button class="button button-clear" ng-click="close()">Close</button>
+            <button class="button button-clear ion-close-round" menu-toggle="right" ng-click="close()">Close</button>
         </div>
     </ion-header-bar>
-    <ion-content class="menu-header">
-       
-        {{truffleContext}}
-        <button class="button" ng-click="collect(truffleContext)">collect that trufl</button>
+    <ion-content class="menu-header mTruffle">
+        <br />
+        <img src="img/Std-Truffle.png" />
+        <h2>{{truffleContext.name}}</h2>
+        <ion-scroll>
+            <p>{{truffleContext.description}}</p>
+        </ion-scroll>
+        <br />
+        <div ng-class="collected() ? 'hide' : ''">>
+            <button class="button button-full button-royal" ng-class="inPOIRange() ? '' : 'disabled'" ng-click="collect(truffleContext)">Grab Truffle</button>
+            <p ng-class="inPOIRange() ? 'hide' : ''">Move closer to the truffle to grab it!</p>
+        </div>
     </ion-content>
 </div>
