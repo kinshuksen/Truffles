@@ -54,7 +54,6 @@ public class AchievementDao {
 				+ "from [achievment] a RIGHT JOIN [challenge] c "
 				+ "on a.challenge_id = c.id "
 				+ "where a.user_id = ?";
-		System.out.println(query);
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {

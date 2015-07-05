@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.truffles.dao.AchievementDao;
 import com.truffles.dao.UserDao;
+import com.truffles.model.User;
 
 /**
  * Handles requests for the Employee service.
@@ -44,18 +45,18 @@ public class UserController {
     }
 	
     @RequestMapping(value = RestURIConstants.REGISTER_USER, method = RequestMethod.GET)
-	public @ResponseBody Integer registerUser(String email, String token, String password, String deviceUUID) {
-    	Integer id = null;
+	public @ResponseBody User registerUser(String email, String token, String password, String deviceUUID) {
+    	User user = new User();
     	logger.info("Start registerUser.");
         //TODO - Add validation to check nulls. WIll include service layer later
         try {
-			id = uDao.registerUser(email, token, password, deviceUUID);
-			achievementDao.insertAchievements(id);
+        	user = uDao.registerUser(email, token, password, deviceUUID);
+			achievementDao.insertAchievements(user.getId());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        return id;
+        return user;
 	}
     
     @RequestMapping(value = RestURIConstants.GET_USER, method = RequestMethod.GET)

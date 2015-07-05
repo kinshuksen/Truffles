@@ -12,7 +12,6 @@ public class Achievement implements Serializable {
 	private int id;
 	private int challenge_id;
 	private int current_number;
-	private int percent_complete;
 	private boolean complete;
 	private int user_id;
 	
@@ -39,12 +38,6 @@ public class Achievement implements Serializable {
 	}
 	public void setCurrent_number(int current_number) {
 		this.current_number = current_number;
-	}
-	public int getPercent_complete() {
-		return percent_complete;
-	}
-	public void setPercent_complete(int percent_complete) {
-		this.percent_complete = percent_complete;
 	}
 	public boolean isComplete() {
 		return complete;

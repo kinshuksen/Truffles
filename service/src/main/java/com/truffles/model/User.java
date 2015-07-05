@@ -8,16 +8,16 @@ public class User implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -1050283636846101432L;
-	private long id;
+	private int id;
 	private String email;
 	private String token;
 	private String password;
 	private String deviceUUID;
 	
-	public long getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getEmail() {
