@@ -135,15 +135,15 @@ angular.module('app.services.startup', [])
 .factory('$intro', function($rootScope, $localStorage, $api) {
   return {
     checkStatus: function() {
-      // Check if terms and conditions have been accepted and fire events
-      if(this.isLoggedIn()) {
+      // Check if intro has been played
+      if(this.introPlayed()) {
          $rootScope.$broadcast('app.introPlayed');
       } else {
         $rootScope.$broadcast('app.introNotPlayed');
       }
     },
-    isLoggedIn: function() {
-      if($localStorage.get("playedIntro")){return true}
+    introPlayed: function() {
+      if($localStorage.get("introPlayed")){return true}
       else{return false}
     }
   }

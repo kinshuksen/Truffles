@@ -6,10 +6,10 @@
         </ion-nav-back-button>
 
         <ion-nav-buttons side="left">
-            <button class="button button-icon button-clear ion-navicon-round" menu-toggle="left"></button>
+            <button class="button button-icon button-clear" menu-toggle="left"><img class="headerButtons" src="./img/Icons/trophy.png" /></button>
         </ion-nav-buttons>
         <ion-nav-buttons side="right">
-            <button class="button button-icon button-clear" menu-toggle="right"><img class="tBag" src="./img/Icons/bag.png" /></button>
+            <button class="button button-icon button-clear" menu-toggle="right"><img class="headerButtons" src="./img/Icons/bag.png" /></button>
         </ion-nav-buttons>
      
     </ion-nav-bar>
@@ -22,21 +22,13 @@
     </header>
     <ion-content class="menu-header">
       <ion-list>
-        <ion-item class="menu-item" nav-clear menu-close ng-click="login()" href="javascript:void(0);">
-          Login
+
+        <ion-item class="menu-item" ng-repeat="item in challenges" nav-clear menu-close ng-click="showAcheivement(challenge)" href="javascript:void(0);">
+          {{item.description}}
+
+            <progress max="{{item.target}}" value="{{item.progress}}"> </progress>
         </ion-item>
-        <ion-item class="menu-item" nav-clear menu-close ng-click="thermo()" href="javascript:void(0);">
-            Thermometer modal
-        </ion-item>
-        <ion-item class="menu-item" nav-clear menu-close href="#/app/thermo">
-          Thermometer
-        </ion-item>
-        <ion-item class="menu-item" nav-clear menu-close href="#/app/map">
-          Map
-        </ion-item>
-        <ion-item class="menu-item" nav-clear menu-close ng-click="intro()" href="javascript:void(0);">
-            Intro
-        </ion-item>
+        
       </ion-list>
     </ion-content>
   </ion-side-menu>
@@ -47,11 +39,16 @@
         </header>
         <ion-content class="menu-header">
             <ion-list>
-                <ion-item class="menu-item" nav-clear menu-close ng-click="trufl()" href="javascript:void(0);">
-                    Login
+                <ion-item class="menu-item" ng-repeat="item in truffles" nav-clear menu-close ng-click="showAcheivement(challenge)" href="javascript:void(0);">
+                    {{item.name}}<br />
+                    {{item.description}}
                 </ion-item>
-                
+                <ion-item class="menu-item" nav-clear menu-close bottom ng-click="settings()" href="javascript:void(0);">
+                    <i class="icon ion-cog"></i><b>Settings</b>
+                </ion-item>
             </ion-list>
+
+
         </ion-content>
     </ion-side-menu>
 

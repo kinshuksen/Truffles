@@ -7,6 +7,16 @@
     width:80px;
 }
 
+.truflrTitle {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    margin-left: -60px;
+    z-index:99999;
+    width:120px;
+}
+
+
 .bar-header {
     height: 53px;
     background-color:rgba(0, 0, 0, 0.53);
@@ -14,7 +24,7 @@
 
 }
 
-.tBag {
+.headerButtons {
     height:40px;
 }
 
@@ -32,7 +42,7 @@
 }
 
 .menu-item, .item-complex a {
-    background-color:   rgba(0, 0, 0, 0.20)!important;
+    background-color:   rgba(0, 0, 0, 0.10)!important;
     color:  #fff;
     border: none;
 }
