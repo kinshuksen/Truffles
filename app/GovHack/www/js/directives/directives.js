@@ -31,5 +31,3 @@ app.directive("passwordVerify", function () {
         }
     };
 });
-
-module.directive("compareTo", compareTo);

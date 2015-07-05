@@ -16,35 +16,41 @@
     <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
   </ion-pane>
 
-  <ion-side-menu side="left" class="menu-bg">
+  <ion-side-menu side="left" class="menu-bg-left">
     <header class="bar bar-header">
-      <h1 class="title">Achievements</h1>
+      <h1 class="title">My Achievements</h1>
     </header>
     <ion-content class="menu-header">
       <ion-list>
 
-        <ion-item class="menu-item" ng-repeat="item in challenges" nav-clear menu-close ng-click="showAcheivement(challenge)" href="javascript:void(0);">
-          {{item.description}}
+        <ion-item class="menu-item" ng-repeat="item in achievements" nav-clear menu-close href="javascript:void(0);">
+            <img class="h80" ng-src="./img/Badges/{{item.challenge_id}}.png" /><br />
+            {{item.description}}
 
-            <progress max="{{item.target}}" value="{{item.progress}}"> </progress>
+            <progress max="{{item.target}}" value="{{item.current_number}}"> </progress> <h2 class="white">{{item.current_number}}/{{item.target}}</h2>
+
         </ion-item>
         
       </ion-list>
     </ion-content>
   </ion-side-menu>
 
-    <ion-side-menu side="right" class="menu-bg">
+    <ion-side-menu side="right" class="menu-bg-right">
         <header class="bar bar-header">
-            <h1 class="title">Trufl Bag</h1>
+            <h1 class="title">Truffle Bag</h1>
         </header>
         <ion-content class="menu-header">
             <ion-list>
-                <ion-item class="menu-item" ng-repeat="item in truffles" nav-clear menu-close ng-click="showAcheivement(challenge)" href="javascript:void(0);">
+                <ion-item class="menu-item" ng-repeat="item in truffles" nav-clear menu-close ng-click="showTruffle(item)" href="javascript:void(0);">
+                    <img class="h40" ng-src="./img/Icons/{{item.poi_type}}.png" />
                     {{item.name}}<br />
                     {{item.description}}
                 </ion-item>
                 <ion-item class="menu-item" nav-clear menu-close bottom ng-click="login()" href="javascript:void(0);">
-                    <i class="icon ion-person"></i><b>Login</b>
+                    <i class="icon ion-person"></i><b>Register</b>
+                </ion-item>
+                <ion-item class="menu-item" nav-clear menu-close bottom ng-click="intro()" href="javascript:void(0);">
+                    <i class="icon ion-person"></i><b>Intro</b>
                 </ion-item>
             </ion-list>
 

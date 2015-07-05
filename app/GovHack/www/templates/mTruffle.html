@@ -1,7 +1,7 @@
 <div class="modal">
     <ion-header-bar>
         <div class="buttons">
-            <button class="button button-clear ion-close-round" menu-toggle="right" ng-click="close()">Close</button>
+            <button class="button button-clear icon ion-close-round" menu-toggle="right" ng-click="close()"></button>
         </div>
     </ion-header-bar>
     <ion-content class="menu-header mTruffle">
@@ -14,6 +14,8 @@
         <br />
         <div ng-class="collected() ? 'hide' : ''">>
             <button class="button button-full button-royal" ng-class="inPOIRange() ? '' : 'disabled'" ng-click="collect(truffleContext)">Grab Truffle</button>
+                     
+                
             <p ng-class="inPOIRange() ? 'hide' : ''">Move closer to the truffle to grab it!</p>
         </div>
     </ion-content>
