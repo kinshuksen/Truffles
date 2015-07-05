@@ -41,15 +41,42 @@
 }
 
 .phone-container img {
-    padding-top: 25%;
-    width: 100%;
+    height: 100%;
 }
-
+.intro {
+    background-color: #cc6699;
+}
 .text-container {
     background-color: #cc6699;
     height: 30%;
+    color: #fff;
+}
+
+.text-container .h2 {
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+    color: #fff;
+}
+
+.text-container .h3 {
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+    color: #fff;
+}
+
+.text-container .h4 {
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+    color: #fff;
 }
 
 .text-container p {
+    height: 100%;
+    padding-top: 20px;
+    vertical-align: middle;
+    text-align: center;
     color: #fff;
 }
