@@ -1,0 +1,841 @@
+/*!
+ * Start Bootstrap - Creative Bootstrap Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: Merriweather,'Helvetica Neue',Arial,sans-serif;
+	
+}
+
+hr {
+    max-width: 50px;
+    border-color: #FF82AB;
+    border-width: 3px;
+}
+
+hr.light {
+    border-color: #fff;
+}
+
+a {
+    color: #FF82AB;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+
+a:hover,
+a:focus {
+    color: #eb3812;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.5;
+	font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+}
+
+.bg-primary {
+    background-color: #FF82AB;
+}
+
+.bg-dark {
+    color: #fff;
+    background-color: #222;
+}
+
+.text-faded {
+    color: rgba(255,255,255,.7);
+}
+
+section .download {
+    padding: 0px 0;
+}
+
+#about {
+
+	display: block;
+
+    width: 100%;
+    min-height: 100%;
+    height: 100%
+	text-align: center;
+    color: #fff;
+    
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#video {
+    width: 100%;
+    min-height: 100%;
+    text-align: center;
+	
+    color: #fff;    
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#html5_video {
+
+	
+	top: 50%;
+
+}
+
+#services {
+	display: block;
+    width: 100%;
+    height: 100%;
+	min-height: 100%;
+    text-align: center;
+    color: #fff;
+    background-image: url(../img/backgrounds/grantie-with-truff.jpg);
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#portfolio {
+      width: 100%;
+    min-height: 100%;
+    text-align: center;
+    color: #fff;
+     background-image: url(../img/backgrounds/truffle-dk.jpg);
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#contact {
+    width: 100%;
+    min-height: 100%;
+    text-align: center;
+    color: #fff;
+    background-image: url(../img/backgrounds/services.jpg);
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+	top:50%;
+}
+
+contact .contact-content  h1{
+
+    margin-top: 0;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+	position: absolute;
+    top: 50%;
+	
+
+}
+
+
+
+    #owl-demo .item{
+      margin: 3px;
+    }
+    #owl-demo .item img{
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+
+
+section {
+
+  padding: 50px 0;
+
+}
+
+.padding  {
+    padding: 50px 0;
+}
+
+aside {
+    padding: 10px 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.navbar-default {
+    border-color: rgba(34,34,34,.05);
+    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    background-color: #fff;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+
+.navbar-default .navbar-header .navbar-brand {
+    text-transform: uppercase;
+    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    font-weight: 700;
+    color: #FF82AB;
+}
+
+.navbar-default .navbar-header .navbar-brand:hover,
+.navbar-default .navbar-header .navbar-brand:focus {
+    color: #eb3812;
+}
+
+.navbar-default .nav > li>a,
+.navbar-default .nav>li>a:focus {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+    color: #222;
+}
+
+.navbar-default .nav > li>a:hover,
+.navbar-default .nav>li>a:focus:hover {
+    color: #FF82AB;
+}
+
+.navbar-default .nav > li.active>a,
+.navbar-default .nav>li.active>a:focus {
+    color: #FF82AB!important;
+    background-color: transparent;
+}
+
+.navbar-default .nav > li.active>a:hover,
+.navbar-default .nav>li.active>a:focus:hover {
+    background-color: transparent;
+}
+
+@media(min-width:768px) {
+    .navbar-default {
+        border-color: rgba(255,255,255,.3);
+        background-color: transparent;
+    }
+
+    .navbar-default .navbar-header .navbar-brand {
+        color: rgba(255,255,255,.7);
+    }
+
+    .navbar-default .navbar-header .navbar-brand:hover,
+    .navbar-default .navbar-header .navbar-brand:focus {
+        color: #fff;
+    }
+
+    .navbar-default .nav > li>a,
+    .navbar-default .nav>li>a:focus {
+        color: rgba(255,255,255,.7);
+    }
+
+    .navbar-default .nav > li>a:hover,
+    .navbar-default .nav>li>a:focus:hover {
+        color: #fff;
+    }
+
+    .navbar-default.affix {
+        border-color: rgba(34,34,34,.05);
+        background-color: #fff;
+    }
+
+    .navbar-default.affix .navbar-header .navbar-brand {
+        font-size: 14px;
+        color: #FF82AB;
+    }
+
+    .navbar-default.affix .navbar-header .navbar-brand:hover,
+    .navbar-default.affix .navbar-header .navbar-brand:focus {
+        color: #eb3812;
+    }
+
+    .navbar-default.affix .nav > li>a,
+    .navbar-default.affix .nav>li>a:focus {
+        color: #222;
+    }
+
+    .navbar-default.affix .nav > li>a:hover,
+    .navbar-default.affix .nav>li>a:focus:hover {
+        color: #FF82AB;
+    }
+}
+
+header {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    text-align: center;
+    color: #fff;
+    background-image: url(../img/backgrounds/header.jpg);
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+header .header-content {
+    position: relative;
+    width: 100%;
+    padding: 100px 15px;
+    text-align: center;
+
+}
+
+header .header-content .header-content-inner h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+header .header-content .header-content-inner hr {
+    margin: 30px auto;
+}
+
+header .header-content .header-content-inner p {
+    margin-bottom: 50px;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255,255,255,.7);
+}
+
+@media(min-width:768px) {
+    header {
+        min-height: 100%;
+    }
+
+    header .header-content {
+        position: absolute;
+        top: 50%;
+        padding: 0 50px;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    header .header-content .header-content-inner {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 1000px;
+    }
+
+    header .header-content .header-content-inner p {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 80%;
+        font-size: 18px;
+    }
+}
+
+.section-heading {
+    margin-top: 0;
+}
+
+.service-box {
+    margin: 50px auto 0;
+    max-width: 400px;
+}
+
+@media(min-width:992px) {
+    .service-box {
+        margin: 20px auto 0;
+    }
+}
+
+.service-box p {
+    margin-bottom: 0;
+}
+
+.portfolio-box {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    max-width: 650px;
+}
+
+.portfolio-box .portfolio-box-caption {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    background: rgba(0,161,226,.9);
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-50%);
+}
+
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+    padding: 0 15px;
+    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+}
+
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+    font-size: 18px;
+}
+
+.portfolio-box:hover .portfolio-box-caption {
+    opacity: 1;
+}
+
+@media(min-width:768px) {
+    .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
+        font-size: 16px;
+    }
+
+    .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+        font-size: 22px;
+    }
+}
+
+.call-to-action h2 {
+    margin: 0 auto 20px;
+}
+
+.text-primary {
+    color: #FF82AB;
+}
+
+.no-gutter > [class*=col-] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.btn-default {
+    border-color: #fff;
+    color: #222;
+    background-color: #fff;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+    border-color: #ededed;
+    color: #222;
+    background-color: #f2f2f2;
+}
+
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+    background-image: none;
+}
+
+.btn-default.disabled,
+.btn-default[disabled],
+fieldset[disabled] .btn-default,
+.btn-default.disabled:hover,
+.btn-default[disabled]:hover,
+fieldset[disabled] .btn-default:hover,
+.btn-default.disabled:focus,
+.btn-default[disabled]:focus,
+fieldset[disabled] .btn-default:focus,
+.btn-default.disabled.focus,
+.btn-default[disabled].focus,
+fieldset[disabled] .btn-default.focus,
+.btn-default.disabled:active,
+.btn-default[disabled]:active,
+fieldset[disabled] .btn-default:active,
+.btn-default.disabled.active,
+.btn-default[disabled].active,
+fieldset[disabled] .btn-default.active {
+    border-color: #fff;
+    background-color: #fff;
+}
+
+.btn-default .badge {
+    color: #fff;
+    background-color: #222;
+}
+
+.btn-primary {
+    border-color: #FF82AB;
+    color: #fff;
+    background-color: #FF82AB;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+    border-color: #ed431f;
+    color: #fff;
+    background-color: #FF82AB;
+}
+
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+    background-image: none;
+}
+
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+    border-color: #FF82AB;
+    background-color: #FF82AB;
+}
+
+.btn-primary .badge {
+    color: #FF82AB;
+    background-color: #fff;
+}
+
+.btn {
+    border: 0;
+    border-radius: 300px;
+    text-transform: uppercase;
+    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    font-weight: 700;
+}
+
+.btn-xl {
+    padding: 15px 30px;
+}
+
+::-moz-selection {
+    text-shadow: none;
+    color: #fff;
+    background: #222;
+}
+
+::selection {
+    text-shadow: none;
+    color: #fff;
+    background: #222;
+}
+
+img::selection {
+    color: #fff;
+    background: 0 0;
+}
+
+img::-moz-selection {
+    color: #fff;
+    background: 0 0;
+}
+
+body {
+    webkit-tap-highlight-color: #222;
+}
+
+
+section#download .container1 {
+  position: relative;
+  text-align: center;
+  z-index: 9;
+}
+section#download .container1 h1 {
+  font-weight: bold;
+  padding: 50px;
+  margin-top: 80px;
+  font-size: 45px;
+}
+section#download .container1 h1 span {
+  font-weight: 300;
+}
+section#download .container1 h4 {
+  line-height: 35px;
+  font-weight: 300;
+}
+section#download .container1 .btn-group {
+  margin: 25px 0;
+}
+section#download .container1 .btn-group .btn {
+  background: none;
+  border: none;
+  -webkit-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  border: 1px solid transparent;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+section#download .container1 .btn-group .btn span {
+  background: url(../img/sprites.png) no-repeat;
+  display: block;
+  margin: 10px auto;
+  -webkit-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+section#download .container1 .btn-group .btn span.android {
+  background-position: 0 -100px;
+  width: 37px;
+  height: 43px;
+}
+section#download .container1 .btn-group .btn span.apple {
+  background-position: 0 0;
+  width: 30px;
+  height: 35px;
+}
+section#download .container1 .btn-group .btn span.play {
+  background-position: 0 -200px;
+  width: 31px;
+  height: 33px;
+}
+section#download .container1 .btn-group .btn span.windows {
+  background-position: 0 -300px;
+  width: 32px;
+  height: 38px;
+}
+section#download .container1 .btn-group .btn span.appstore {
+  background-position: -50px 0;
+  width: 202px;
+  height: 48px;
+}
+section#download .container1 .btn-group .btn span.playstore {
+  background-position: -50px -50px;
+  width: 197px;
+  height: 43px;
+}
+section#download .container1 .btn-group .btn span.micstore {
+  background-position: -50px -100px;
+  width: 228px;
+  height: 56px;
+}
+section#download .container1 .btn-group .btn:hover {
+  border: 1px solid white;
+}
+section#download .container1 .btn-group .btn:hover span.android {
+  background-position: 0 -150px;
+}
+section#download .container1 .btn-group .btn:hover span.apple {
+  background-position: 0 -50px;
+}
+section#download .container1 .btn-group .btn:hover span.play {
+  background-position: 0 -250px;
+}
+section#download .container1 .btn-group .btn:hover span.windows {
+  background-position: 0 -350px;
+}
+section#download .container1 .btn-group .btn:hover span.appstore {
+  background-position: -300px 0;
+}
+section#download .container1 .btn-group .btn:hover span.playstore {
+  background-position: -300px -50px;
+}
+section#download .container1 .btn-group .btn:hover span.micstore {
+  background-position: -300px -100px;
+}
+section#download .container1 .btn-group.small .btn {
+  border: none !important;
+}
+section#download .container1 .btn-group.small .btn:hover {
+  border: none !important;
+}
+
+
+
+#slider {
+
+  overflow: hidden;
+  background-attachment: fixed;
+  position: relative;
+  text-align: center; 
+  bottom: 0;
+  width: 100%;
+  top: 95%
+  
+  
+}
+
+#slider .container {
+  position: relative;
+  text-align: center;
+}
+#slider .container h1, #slider .container h3 {
+  font-weight: 300;
+  text-transform: capitalize;
+}
+#slider .container h1 span, #slider .container h3 span {
+  font-weight: bold;
+}
+#slider .container h1 {
+  color: #FF82AB;
+  margin-top: 70px;
+}
+#slider .container h3 {
+  margin: 0;
+}
+#slider .container .btn.side {
+  margin-top: 210px;
+}
+#slider .container #carousel-slider .carousel-inner .item img {
+  margin: auto;
+}
+#slider .container #carousel-slider .carousel-control {
+  background-image: none;
+  padding-top: 45%;
+}
+#slider .container #carousel-slider .carousel-control .slider-left, #slider .container #carousel-slider .carousel-control .slider-right {
+  background: url(../img/slider.png) no-repeat;
+  display: block;
+  width: 89px;
+  height: 67px;
+  -webkit-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+#slider .container #carousel-slider .carousel-control .slider-left {
+  background-position: 0 0;
+}
+#slider .container #carousel-slider .carousel-control .slider-left:hover {
+  background-position: -100px 0;
+}
+#slider .container #carousel-slider .carousel-control .slider-right {
+  background-position: -200px 0;
+}
+#slider .container #carousel-slider .carousel-control .slider-right:hover {
+  background-position: -300px 0;
+}
+#slider .container .btn-group .btn {
+  background: none;
+  border: none;
+  -webkit-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  border: 1px solid transparent;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+#slider .container .btn-group .btn span {
+  background: url(../img/sprites.png) no-repeat;
+  display: block;
+  margin: 5px auto;
+  -webkit-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+#slider .container .btn-group .btn span.android {
+  background-position: 0 -150px;
+  width: 37px;
+  height: 43px;
+}
+#slider .container .btn-group .btn span.apple {
+  background-position: 0 -50px;
+  width: 30px;
+  height: 35px;
+}
+#slider .container .btn-group .btn span.play {
+  background-position: 0 -250px;
+  width: 31px;
+  height: 33px;
+}
+#slider .container .btn-group .btn span.windows {
+  background-position: 0 -350px;
+  width: 32px;
+  height: 38px;
+}
+#slider .container .btn-group .btn:hover {
+  border: 1px solid white;
+}
+#slider .container .btn-group .btn:hover span.android {
+  background-position: 0 -100px;
+}
+#slider .container .btn-group .btn:hover span.apple {
+  background-position: 0 0;
+}
+#slider .container .btn-group .btn:hover span.play {
+  background-position: 0 -200px;
+}
+#slider .container .btn-group .btn:hover span.windows {
+  background-position: 0 -300px;
+}
+#slider .container .btn-group.small .btn {
+  border: none !important;
+}
+#slider .container .btn-group.small .btn:hover {
+  border: none !important;
+}
+
+
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
