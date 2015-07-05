@@ -159,7 +159,7 @@ angular.module('app.controllers.abstract', [])
         // loading popup event handler
         $scope.$on('app.introNotPlayed', function (e) {
             $scope.intro();
-            $localStorage.set("introPlayed", true);
+            $localStorage.set("introPlayed", false);
         })
 
         //Perform the login action when the user submits the login form
