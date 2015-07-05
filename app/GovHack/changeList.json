@@ -418,7 +418,9 @@
     "www\\img\\Icons\\location.png",
     "config.xml",
     "www\\img\\Icons\\GOLDEN.png",
-    "www\\img\\header.png"
+    "www\\img\\header.png",
+    "www\\img\\Std-Truffle.png",
+    "www\\img\\contact.jpg"
   ],
   "deletedFilesIos": [
     "www\\img\\Icons\\Sports-nature-outdoors-pin.png",
@@ -435,7 +437,14 @@
     "www\\img\\Badges\\Badge-Hungry.png",
     "www\\img\\Badges\\Badge-tour-operator.png",
     "www\\img\\Badges\\Badge-Noob.png",
-    "www\\img\\Badges\\Alfresco.png"
+    "www\\img\\Badges\\Alfresco.png",
+    "www\\js\\controllers\\abstract.js.LOCAL.js",
+    "www\\js\\controllers\\abstract.js.REMOTE.js",
+    "www\\js\\controllers\\abstract.js.BASE.js",
+    "www\\js\\controllers\\map.js.REMOTE.js",
+    "www\\js\\controllers\\map.js.LOCAL.js",
+    "www\\js\\controllers\\map.js.BASE.js",
+    "resources\\splash1.jpg"
   ],
   "addedPluginsIos": [
     "org.apache.cordova.device@0.3.0",
@@ -447,8 +456,7 @@
   ],
   "deletedPluginsIos": [],
   "changedFiles": [
-    "plugins\\android.json",
-    "www\\css\\style.css"
+    "plugins\\android.json"
   ],
   "deletedFiles": [],
   "addedPlugins": [],

@@ -101,7 +101,6 @@ angular.module('app.services.api', [])
         return GetData(baseUrl + "/user/achievements?", { userID: $localStorage.get("userID") }, false);
     },
 
-
     getTruffles: function () {
         return GetData(baseUrl + "/truffle/get_truffle?", { userID: $localStorage.get("userID") }, false);
     },
@@ -120,7 +119,7 @@ angular.module('app.services.api', [])
     postRegister: function(context) {
         console.log(context);
         var payload = [{email: context.email, token: null, password: context.password, deviceUID: $localStorage.get("deviceUID") }];
-        return PostData(baseUrl + "user/register", payload);
+        return GetData(baseUrl + "user/register", payload);
     },
 
       //Post example passing in a JSON obj

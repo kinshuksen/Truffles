@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <widget xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" id="au.com.intecapps.truffle" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" defaultlocale="en-US">
-  <name>Truffle</name>
+  <name>Truflr</name>
   <description>
   </description>
   <author href="http://cordova.io" email="dev@cordova.apache.org">Intec Apps</author>
@@ -96,8 +96,8 @@
   <vs:plugin name="pl.makingwaves.estimotebeacons" version="0.7.1" />
   <vs:plugin name="com.ionic.keyboard" version="1.0.4" />
   <preference name="android-targetSdkVersion" value="21" />
-  <preference name="android-minSdkVersion" value="21" />
-  <preference name="KeepRunning" value="False" />
+  <preference name="android-minSdkVersion" value="19" />
+  <preference name="KeepRunning" value="True" />
   <preference name="ShowTitle" value="True" />
   <preference name="InAppBrowserStorageEnabled" value="False" />
   <preference name="SuppressesIncrementalRendering" value="True" />
