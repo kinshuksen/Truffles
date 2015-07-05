@@ -71,14 +71,19 @@ angular.module('app.controllers.abstract', [])
         // Open the truffle modal
         $scope.showTruffle = function (truffle, myloc) {
             $scope.truffleContext = truffle;
-            $scope.dist = distance(truffle.latitude, truffle.longitude, myloc.position.A, myloc.position.F, "K")
-            $scope.inPOIRange = function () {
-                return ($scope.dist < 0.02)
+            if ($scope.truffleContext.poiType == "GOLDEN") {
+                $scope.mThermo.show();
+                initialize();
+            } else {
+                $scope.dist = distance(truffle.latitude, truffle.longitude, myloc.position.A, myloc.position.F, "K")
+                $scope.inPOIRange = function () {
+                    return ($scope.dist < 0.02)
+                }
+                $scope.collected = function () {
+                    return false; //insert logic to check if we have collected this truffle, used to show/hide the "collect" button on truffle modal
+                }
+                $scope.mTruffle.show();
             }
-            $scope.collected = function () {
-                return false; //insert logic to check if we have collected this truffle, used to show/hide the "collect" button on truffle modal
-            }
-            $scope.mTruffle.show();
         };
 
 
